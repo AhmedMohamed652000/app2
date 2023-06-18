@@ -1,144 +1,94 @@
-<!-- <form action="#" method="POST" enctype="multipart/form-data">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="style">Style:</label>
-    <input type="text" id="style" name="style" required>
-
-    <label for="total_hell_space">Total Hell Space:</label>
-    <input type="number" id="total_hell_space" name="total_hell_space" required>
-
-    <label for="num_chairs">Number of Chairs:</label>
-    <input type="number" id="num_chairs" name="num_chairs" required>
-
-    <label for="num_table">Number of Tables:</label>
-    <input type="number" id="num_table" name="num_table" required>
-
-    <label for="hell_price">Hell Price:</label>
-    <input type="number" id="hell_price" name="hell_price" required>
-
-    <label for="photo">Photo:</label>
-    <input type="file" id="photo" name="photo" accept="image/*" required>
-
-    <label for="3d_model">3D Model:</label>
-    <input type="file" id="3d_model" name="3d_model" accept=".obj,.fbx,.glb,.gltf" required>
-
-    <label for="location">Location:</label>
-    <input type="text" id="location" name="location" required>
-
-    <label for="free_days_hell">Free Days in Hell:</label>
-    <input type="text" id="free_days_hell" name="free_days_hell" required>
-
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" required></textarea>
-
-    <input type="submit" value="Submit">
-</form> -->
-
-
-
-  <!-- <div class="form-container"> 
-    <h2 class="nml">Fill in the hall details</h2>
-
-    [formGroup]="form" (ngSubmit)="onSubmit()"
-    <form  >
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-  
-      <label for="style">Style:</label>
-      <input type="text" id="style" name="style" required>
-  
-      <label for="total-space">Total Hell Space:</label>
-      <input type="number" id="total-space" name="total-space" required>
-  
-      <label for="num-chairs">Number of Chairs:</label>
-      <input type="number" id="num-chairs" name="num-chairs" required>
-  
-      <label for="num-tables">Number of Tables:</label>
-      <input type="number" id="num-tables" name="num-tables" required>
-  
-      <label for="price">Price:</label>
-      <input type="number" id="price" name="price" required>
-  
-      <label for="photo">Upload Photo:</label>
-      <input type="file" id="photo" name="photo">
-  
-      <label for="model">Upload 3D Model:</label>
-      <input type="file" id="model" name="model">
-  
-      <label for="location">Location:</label>
-      <input type="text" id="location" name="location" required>
-  
-      <label for="free-days">Free Days:</label>
-      <input type="text" id="free-days" name="free-days" required>
-  
-      <label for="description">Description:</label>
-      <textarea id="description" name="description" required></textarea>
-  
-      <button type="submit">Done</button>
-    </form>
-  </div> 
-    -->
- 
- 
-
-
-<div class="container w-75 m-auto">
+<div class="container card mt-5 p-4">
+  <h4 class="alert alert-primary text-center">Add New Hell</h4>
   <form action="submit" [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-    <!-- <div *ngIf="formdetails.get('fullName')?.errors&&formdetails.get('fullName')?.touched">
-    <p *ngIf="formdetails.get('fullName')?.getError('required')" class=" alert alert-danger ">Name is Requierd</p>
-    <p *ngIf="formdetails.get('fullName')?.getError('maxlength')" class=" alert alert-danger  ">Name Can't be less than 10</p>
-    <p *ngIf="formdetails.get('fullName')?.getError('minlength')" class=" alert alert-danger  ">Name Can't be more than 10</p>
-    </div> -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="name" class="form-label">Name:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="style" class="form-label">Style:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="style"
+            name="style"
+            required
+          />
+        </div>
+      </div>
 
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="total-space" class="form-label">Total Hell Space:</label>
+          <input
+            class="form-control"
+            type="number"
+            id="total-space"
+            name="total-space"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="num-chairs" class="form-label">Number of Chairs:</label>
+          <input
+            class="form-control"
+            type="number"
+            id="num-chairs"
+            name="num-chairs"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="num-tables" class="form-label">Number of Tables:</label>
+          <input
+            class="form-control"
+            id="num-tables"
+            name="num-tables"
+            type="number"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="price" class="form-label">Price:</label>
+          <input
+            class="form-control"
+            required
+            type="number"
+            id="price"
+            name="price"
+          />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="mb-1">
+          <label for="photo" class="form-label">Upload Photo:</label>
+          <input
+            class="form-control"
+            required
+            type="file"
+            id="photo"
+            name="photo"
+          />
+        </div>
+      </div>
+    </div>
 
-    <label for="style">Style:</label>
-      <input type="text" id="style" name="style" required>
-    <!-- <div *ngIf="formdetails.get('email')?.errors&&formdetails.get('email')?.touched">
-        <p *ngIf="formdetails.get('email')?.getError('required')" class=" alert alert-danger ">Email is Requierd</p>
-        <p *ngIf="formdetails.get('email')?.getError('email')" class=" alert alert-danger  ">Enter Valid Email</p>
-    </div> -->
-
-    <label for="total-space">Total Hell Space:</label>
-      <input type="number" id="total-space" name="total-space" required>
-    <!-- <div *ngIf="formdetails.get('phone_number')?.errors&&formdetails.get('phone_number')?.touched">
-        <p *ngIf="formdetails.get('phone_number')?.getError('required')" class=" alert alert-danger ">phone_number is Requierd</p>
-        <p *ngIf="formdetails.get('phone_number')?.getError('pattern')" class=" alert alert-danger  ">Enter Valid phone_number</p>
-    </div> -->
-    <label for="num-chairs">Number of Chairs:</label>
-      <input type="number" id="num-chairs" name="num-chairs" required>
-    <!-- <div *ngIf="formdetails.get('chieldAge')?.errors&&formdetails.get('  chieldAge')?.touched">
-        <p *ngIf="formdetails.get('chieldAge')?.getError('required')" class=" alert alert-danger ">  chieldAge is Requierd</p>
-    </div> -->
-
-    <label for="num-tables">Number of Tables:</label>
-      <input type="number" id="num-tables" name="num-tables" required>
-    <!-- <div *ngIf="formdetails.get('chieldAge')?.errors&&formdetails.get('  chieldAge')?.touched">
-        <p *ngIf="formdetails.get('chieldAge')?.getError('required')" class=" alert alert-danger ">  chieldAge is Requierd</p>
-    </div> -->
-   
-    <label for="photo">Upload Photo:</label>
-    <input type="file" id="photo" name="photo">
-    <!-- <div *ngIf="formdetails.get('img')?.errors&&formdetails.get('img')?.touched">
-        <p *ngIf="formdetails.get('img')?.getError('required')" class=" alert alert-danger ">img is Requierd</p>
-    </div> -->
-
-   
-
-    
-
-    <label for="price">Price:</label>
-    <input type="number" id="price" name="price" required>
-
-    <!-- <div *ngIf="formdetails.get('overviwe')?.errors&&formdetails.get('overviwe')?.touched">
-        <p *ngIf="formdetails.get('overviwe')?.getError('required')" class=" alert alert-danger ">overviwe is Requierd</p>
-    </div> -->
-    <button    type="submit" class="btn-primary btn mt-3">
-        send
-    </button>
-
-</form>
+    <button type="submit" class="btn-primary btn mt-3 w-100">send</button>
+  </form>
 </div>
-    
