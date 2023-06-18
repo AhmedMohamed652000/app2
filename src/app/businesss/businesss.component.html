@@ -1,0 +1,57 @@
+<div class="wrapp">
+  <h2>Registration</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+  <form class="xx" (ngSubmit)="subitRegisterForm(registerForm)" [formGroup]="registerForm">
+
+    <div class="input-box">
+      <label for="name">Name:</label>
+      <input type="text" formControlName="name" class="form-control mb-2" />
+      <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched">
+        <p *ngIf="registerForm.get('name')?.getError('required')" class="alert py-1 alert-danger">Name is required</p>
+      </div>
+    </div>
+
+    <div class="input-box">
+      <label for="email">Email:</label>
+      <input type="email" formControlName="email" class="form-control mb-2" />
+      <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched">
+        <p *ngIf="registerForm.get('email')?.getError('required')" class="alert py-1 alert-danger">Email is required</p>
+        <p *ngIf="registerForm.get('email')?.getError('email')" class="alert py-1 alert-danger">Invalid email format</p>
+      </div>
+    </div>
+
+    <div class="input-box">
+      <label for="password">Password:</label>
+      <input type="password" formControlName="password" class="form-control mb-2" />
+      <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched">
+        <p *ngIf="registerForm.get('password')?.getError('required')" class="alert py-1 alert-danger">Password is required</p>
+        <p *ngIf="registerForm.get('password')?.getError('pattern')" class="alert py-1 alert-danger">Password must start with uppercase letter and be at least 8 characters long</p>
+      </div>
+    </div>
+
+    <div class="input-box">
+      <label for="phone">Phone:</label>
+      <input type="tel" formControlName="phone" class="form-control mb-2" />
+      <div *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched">
+        <p *ngIf="registerForm.get('phone')?.getError('required')" class="alert py-1 alert-danger">Phone number is required</p>
+        <p *ngIf="registerForm.get('phone')?.getError('pattern')" class="alert py-1 alert-danger">Invalid phone number format. Please enter a 10-digit number.</p>
+      </div>
+    </div>
+
+    <div class="input-box">
+      <label for="dob">Date of Birth:</label>
+      <input type="text" formControlName="dob" class="form-control mb-2" />
+      <div *ngIf="registerForm.get('dob')?.errors && registerForm.get('dob')?.touched">
+        <p *ngIf="registerForm.get('dob')?.getError('required')" class="alert py-1 alert-danger">Date of birth is required</p>
+      </div>
+    </div>
+
+    <div class="input-box button">
+      <button type="submit" [disabled]="registerForm.invalid" class="btn btn-info">
+        <span>Register</span>
+      </button>
+    </div>
+
+  </form>
+</div>

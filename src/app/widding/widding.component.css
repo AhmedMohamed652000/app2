@@ -1,0 +1,74 @@
+
+.one{
+    width:100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(../../assets/imags/أنواع-التصوير-الفوتوغرافي.webp);
+    position: fixed;
+    
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+background-size: 100% 100%;
+
+}
+
+button
+{
+    color: #000;
+ border-radius:50px;
+position: absolute;
+left: 8.54%;
+right: 55.47%;
+top: 66.02%;
+bottom: 22.41%;
+/* background: #00FFEF; */
+/* border: 1px solid #707070; */
+
+}
+
+.h3
+{
+    
+   position: absolute;
+left: 22.55%;
+right: 69.53%;
+top: 68.15%;
+bottom: 24.44%;
+
+font-family: 'Segoe UI';
+font-style: normal;
+font-weight: 400;
+font-size: 60px;
+line-height: 80px;
+}
+
+
+
+
+.but
+{
+    color: #000000;
+    position: absolute;
+left: 55.47%;
+right: 8.54%;
+top: 66.02%;
+bottom: 22.41%;
+
+/* background: #00FFEF; */
+position: absolute;
+left: 55.49%;
+right: 8.57%;
+top: 66.06%;
+bottom: 22.45%;
+
+/* border: 1px solid #707070; */
+
+}
+
+
+
+
+

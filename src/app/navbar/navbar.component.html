@@ -1,0 +1,90 @@
+<!--  
+  <nav class="navbar  ">
+    <div class="row w-100 pb-0">
+      <div class="xx col-md-2">
+        <img src="../../assets/imags/party-places-low-resolution-logo-color-on-transparent-backgro (2).png" class="xc  md-2" alt="">
+      </div>
+     
+           <div class=" mp col-md-8 pt-3 px-1 mx-0 position-relative"> 
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="" routerLink="/mohamed/homepage">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="" routerLink="/mohamed/widding2">Wedding</a>
+              </li>
+              <li class="nav-item">
+                <a class="" routerLink="/mohamed/session2">session</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class=""routerLink="/mohamed/Photographer2">photographer</a>
+              </li>
+              <li class="nav-item">
+                <a class=""   routerLink="/mohamed/videography2">videography</a>
+              </li>
+             
+            </ul>
+           </div>
+      </div>
+      </nav> -->
+
+
+      
+      <!-- <nav >
+  
+        
+       <div class="nav23">
+      
+
+        <a *ngIf="isLogin" routerLink="/mohamed/homepage">Home</a>
+        <a *ngIf="isLogin" routerLink="/mohamed/widding2">Wedding</a>
+        <a *ngIf="isLogin" routerLink="/mohamed/session2">session</a>
+        <a *ngIf="isLogin" routerLink="/mohamed/Photographer2">photographer</a>
+        <a *ngIf="isLogin" routerLink="/mohamed/videography2">videography</a>
+        <div class="animation start-home"></div>
+        <div class="mlo">
+          <a (click)="logOut()" *ngIf="isLogin" > logout</a>
+          <span *ngIf="isLogin">Hello {{userInfo.getValue().first_name}}</span>
+
+        </div>
+      </div>
+
+      </nav> -->
+      
+      <nav class="beautiful-navbar">
+        <ul>
+          
+          
+          <li><a *ngIf="isLogin" routerLink="/mohamed/homepage">Home</a></li>
+          <li><a *ngIf="isLogin" routerLink="/mohamed/widding2">Wedding</a></li>
+          <li><a *ngIf="isLogin" routerLink="/mohamed/session2">Session</a></li>
+          <li><a *ngIf="isLogin" routerLink="/mohamed/Photographer2">Photographer</a></li>
+          <li><a *ngIf="isLogin" routerLink="/mohamed/videography2">Videography</a></li>
+          <!-- <li><a *ngIf="!isLogin" routerLink="/mohamed/register">Register</a></li>
+          <li><a *ngIf="!isLogin" routerLink="/mohamed/Login">Login</a></li> -->
+          <li class="nav-item d-flex align-items-center mx-4">
+            <span  *ngIf="isLogin" class="c fa fa-globe "> {{userInfo.getValue().first_name}}</span>
+          </li>
+          <i    routerLink="/mohamed/Profilepage" class="fa fa-user-circle fa-2x"></i> 
+        </ul>
+      </nav>
+      
+
+
+
+
+
+
+
+
+       <!-- <div class="col-md-8 pt-3 px-0 mx-0 position-relative"> -->
+        <!-- <input type="text" placeholder=" serch....... " class=" form-control"> -->
+        <!-- <form class="">
+          <label for="search"></label>
+          <input type="text" id="search" name="search" class="form-control">
+          <button  type="submit" class="search-icon position-absolute">
+            <i class="fa fa-search"></i>
+           
+          </button>
+        </form> -->

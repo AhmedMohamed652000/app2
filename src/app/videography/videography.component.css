@@ -1,0 +1,66 @@
+img
+{
+    width: 100%;
+height: 80vh;
+border-radius:30px ;
+}
+h1 
+{
+    font-size: 44px;
+    padding: 30px;
+}
+p 
+{
+    font-size: 23px;
+    padding: 15px;
+    letter-spacing: 0;
+    font-weight: 300;
+    font-family: 'Segoe UI';
+    font-style: normal;
+}
+
+.skip
+{
+    color: #000000;
+    font-size: 18px;
+    padding: 15px;
+font-family: 'Segoe UI';
+font-style: normal;
+font-weight: 400;
+font-size: 33px;
+line-height: 53px;
+
+}
+/* .next
+{
+    background: #00FFEF;
+    color: #FFFFFF;
+    border-radius:50px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight:200px;
+    font-size: 40px;
+    line-height: 53px;
+} */
+.btn
+{
+    border-radius: 30px;
+}
+
+
+/* h6
+
+{
+    padding: 19px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s ease-in-out ;
+    letter-spacing: 2px;
+   
+
+}
+h6:hover
+{
+    color: rgb(22, 22, 184);
+    transform:scale(1.3);
+} */
