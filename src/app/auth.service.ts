@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   signOut() {
-    localStorage.removeItem('userToken');
+    localStorage.clear();
     this.UserData.next(null);
     this._Router.navigate(['/mohamed/hompage'])
 
