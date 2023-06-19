@@ -3,25 +3,12 @@ import { apiUrl } from '../API/config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-photographer-form',
   templateUrl: './photographer-form.component.html',
-  styleUrls: ['./photographer-form.component.css'],
+  styleUrls: ['./photographer-form.component.css']
 })
 export class PhotographerFormComponent {
-  photographer = {
-    name: '',
-    price: '',
-    coverImage: '',
-    shooting: '',
-    openDay: '',
-    closeDay: '',
-    images: ['', ''],
-    location: '',
-    description: '',
-  };
-
 
   myForm: any;
   file: any;
@@ -89,4 +76,5 @@ export class PhotographerFormComponent {
       }
     );
   }
+
 }

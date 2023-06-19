@@ -29,6 +29,8 @@ import { PhotographerFormComponent } from './photographer-form/photographer-form
 import { VideographyFormComponent } from './videography-form/videography-form.component';
 import { EditVideographyComponent } from './edit-videography/edit-videography.component';
 import { EditHellComponent } from './edit-hell/edit-hell.component';
+import { VideographyListComponent } from './videography-list/videography-list.component';
+import { PhotographerListComponent } from './photographer-list/photographer-list.component';
 
 const routes: Routes = [
   {
@@ -51,7 +53,6 @@ const routes: Routes = [
       { path: 'VideographyForm', component: VideographyFormComponent },
       { path: 'videography2', component: Videography2Component },
       { path: 'videographyList/:id', component: VideographyListComponent },
-
       { path: 'homepage', component: HomepageComponent },
       { path: 'Photographer2', component: Photographer2Component },
       { path: 'session2', component: Session2Component },
