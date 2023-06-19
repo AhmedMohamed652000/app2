@@ -1,10 +1,12 @@
 <div class="container card mt-5 p-4">
-  <h4 class="alert alert-primary text-center">Fill in the Session details</h4>
+  <h4 class="alert alert-primary text-center">
+    Fill in the photographer details
+  </h4>
   <form action="submit">
     <div class="row">
       <div class="col-md-6">
         <div class="mb-1">
-          <label for="name" class="form-label">Name of session:</label>
+          <label for="name" class="form-label">Name:</label>
           <input
             class="form-control"
             type="text"
@@ -16,12 +18,27 @@
       </div>
       <div class="col-md-6">
         <div class="mb-1">
-          <label for="price" class="form-label">Session price:</label>
+          <label for="price" class="form-label">price:</label>
           <input
             class="form-control"
             type="number"
             id="price"
             name="price"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="cover_image" class="form-label"
+            >Upload cover image:</label
+          >
+          <input
+            class="form-control"
+            type="file"
+            id="cover_image"
+            name="cover_image"
+            accept="image/*"
             required
           />
         </div>
@@ -38,21 +55,56 @@
           />
         </div>
       </div>
-
       <div class="col-md-6">
         <div class="mb-1">
-          <label for="photo" class="form-label">Upload session photo:</label>
+          <label for="open_day" class="form-label">open day:</label>
+          <input
+            class="form-control"
+            id="open_day"
+            name="open_day"
+            type="text"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="close_day" class="form-label">close day:</label>
+          <input
+            class="form-control"
+            id="close_day"
+            name="close_day"
+            type="text"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="images[0]" class="form-label"> images 0:</label>
           <input
             class="form-control"
             type="file"
-            id="photo"
-            name="photo"
+            id="images[0]"
+            name="images[0]"
             accept="image/*"
             required
           />
         </div>
       </div>
-
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="images[1]" class="form-label"> images 1:</label>
+          <input
+            class="form-control"
+            type="file"
+            id="images[1]"
+            name="images[1]"
+            accept="image/*"
+            required
+          />
+        </div>
+      </div>
       <div class="col-12">
         <div class="mb-1">
           <label for="location" class="form-label">Location:</label>

@@ -25,20 +25,27 @@ import { WiddingComponent } from './widding/widding.component';
 import { Widding2Component } from './widding2/widding2.component';
 import { WiddinglistComponent } from './widdinglist/widdinglist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
+import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
+import { VideographyFormComponent } from './videography-form/videography-form.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'mohamed/party', pathMatch: 'full'
+    path: '',
+    redirectTo: 'mohamed/party',
+    pathMatch: 'full',
   },
   {
-
-    path: 'mohamed', component: MohamedComponent, children: [
+    path: 'mohamed',
+    component: MohamedComponent,
+    children: [
       { path: 'party', component: PartyComponent },
       { path: 'widding', component: WiddingComponent },
       { path: 'client', component: ClientComponent },
       { path: 'session', component: SessionComponent },
       { path: 'Photographer', component: PhotographerComponent },
+      { path: 'PhotographerForm', component: PhotographerFormComponent },
       { path: 'Videography', component: VideographyComponent },
+      { path: 'VideographyForm', component: VideographyFormComponent },
       { path: 'homepage', component: HomepageComponent },
       { path: 'videography2', component: Videography2Component },
       { path: 'Photographer2', component: Photographer2Component },
@@ -55,26 +62,11 @@ const routes: Routes = [
       { path: 'Sessionlist/:id', component: SessionlistComponent },
       { path: 'Profilepage', component: ProfilepageComponent },
     ],
-
-
-
-
   },
   { path: 'footer', component: FooterComponent },
-
-
-]
-
-
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-
-
-
-
-
-
-
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

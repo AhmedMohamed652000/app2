@@ -6,10 +6,10 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private _AuthService: AuthService, private _Router: Router) { }
+  constructor(private _AuthService: AuthService, private _Router: Router) {}
 
   errorMessage: string = '';
   isLogin: boolean = false;
@@ -20,31 +20,21 @@ export class RegisterComponent implements OnInit {
     dob: new FormControl(null),
     email: new FormControl(null),
     password: new FormControl(null, [Validators.required]),
-  })
+  });
 
   subitRegisterForm(registerForm: FormGroup) {
-
     if (registerForm.valid) {
-
       this._AuthService.signup(registerForm.value).subscribe({
         next: (response) => {
           if (response.success === true) {
-
-            this._Router.navigate(['/mohamed/Login'])
-          }
-          else {
-
+            this._Router.navigate(['/mohamed/Login']);
+          } else {
             this.errorMessage = response.message;
-
           }
-        }
-      })
+        },
+      });
     }
   }
 
-
-
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }

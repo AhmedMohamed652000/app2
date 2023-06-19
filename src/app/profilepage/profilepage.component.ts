@@ -4,29 +4,21 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-profilepage',
   templateUrl: './profilepage.component.html',
-  styleUrls: ['./profilepage.component.css']
+  styleUrls: ['./profilepage.component.css'],
 })
 export class ProfilepageComponent {
-
-  userData: any
-
-
-
-
-  constructor(private _AuthService: AuthService, private _Router: Router) { }
+  userData: any;
+  constructor(private _AuthService: AuthService, private _Router: Router) {}
   isLogin: boolean = false;
   userInfo: any = {};
   logOut() {
-
     this._AuthService.signOut();
-    this._Router.navigate(['/mohamed/widding'])
+    this._Router.navigate(['/mohamed/widding']);
   }
 
   ngOnInit(): void {
-
-
-    if (localStorage.getItem("userDate")) {
-      this.userData = JSON.parse(localStorage.getItem("userDate") || '{}')
+    if (localStorage.getItem('userDate')) {
+      this.userData = JSON.parse(localStorage.getItem('userDate') || '{}');
     }
 
     this._AuthService.UserData.subscribe({
@@ -34,12 +26,10 @@ export class ProfilepageComponent {
         if (this._AuthService.UserData.getValue() != null) {
           this.isLogin = true;
           this.userInfo = this._AuthService.UserData;
-        }
-        else {
+        } else {
           this.isLogin = false;
         }
-      }
-    })
+      },
+    });
   }
-
 }
