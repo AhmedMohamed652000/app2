@@ -1,0 +1,26 @@
+<div class="container">
+  <div><h3 class="qq fw-bolder m-3">Wedding</h3></div>
+  <div class="row gx-5">
+    <div
+      *ngFor="let movie of trendingMovies; let index = index"
+      class="col-md-3"
+    >
+      <div class="product-box">
+        <img src="{{ movie.cover }}" class="w-100" alt="" />
+        <div class="product-name">{{ movie.name }}</div>
+        <div class="product-hall">{{ movie.style }}</div>
+        <div class="product-price">{{ movie.price }}$</div>
+        <div>
+          <button
+            class="btn btn-primary"
+            [routerLink]="['/mohamed/widdinglist', movie.id]"
+          >
+            details
+          </button>
+          <button class="btn btn-info mx-2">edit</button>
+          <button class="btn btn-danger">delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

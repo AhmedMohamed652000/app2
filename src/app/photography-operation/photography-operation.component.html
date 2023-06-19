@@ -1,0 +1,37 @@
+<div class="container">
+  <div><h3 class="qq fw-bolder m-3">photographer</h3></div>
+  <div class="am d-flex justify-content-end"></div>
+  <div class="row gx-5">
+    <div class="col-md-3" *ngFor="let item of allPhotographer">
+      <div>
+        <div class="product-box">
+          <img [src]="item.cover" alt="Product Image" />
+          <div class="product-name">{{ item.name }}</div>
+          <div class="product-hall">Photographer</div>
+          <div class="product-price">{{ item.price }}$</div>
+          <div class="product-evaluation">
+            <div *ngFor="let rating6 of ratings6">
+              <ng-container *ngFor="let star of stars6; index as i">
+                <i
+                  class="fa fa-star"
+                  [class.filled]="i < rating6.value"
+                  (click)="changeRating6(rating6, i + 1)"
+                ></i>
+              </ng-container>
+            </div>
+          </div>
+          <div>
+            <button
+              class="btn btn-primary"
+              [routerLink]="['/mohamed/PhotographerList', item.id]"
+            >
+              details
+            </button>
+            <button class="btn btn-info mx-2">edit</button>
+            <button class="btn btn-danger">delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

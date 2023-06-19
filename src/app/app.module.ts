@@ -35,6 +35,15 @@ import { PhotographerFormComponent } from './photographer-form/photographer-form
 import { VideographyFormComponent } from './videography-form/videography-form.component';
 import { PhotographerListComponent } from './photographer-list/photographer-list.component';
 import { VideographyListComponent } from './videography-list/videography-list.component';
+
+import { EditVideographyComponent } from './edit-videography/edit-videography.component';
+import { EditHellComponent } from './edit-hell/edit-hell.component';
+import { CommonModule } from '@angular/common';
+import { SessionOpertionComponent } from './session-opertion/session-opertion.component';
+import { WeddingOperationComponent } from './wedding-operation/wedding-operation.component';
+import { PhotographyOperationComponent } from './photography-operation/photography-operation.component';
+import { VideographyOperationComponent } from './videography-operation/videography-operation.component';
+
 import { EditVideographyComponent } from './edit-videography/edit-videography.component';
 import { EditHellComponent } from './edit-hell/edit-hell.component';
 import { EditSessionComponent } from './edit-session/edit-session.component';
@@ -71,13 +80,16 @@ import { CommonModule } from '@angular/common';
     ProfilepageComponent,
     PhotographerFormComponent,
     VideographyFormComponent,
-    PhotographerListComponent,
-    VideographyListComponent,
+    EditVideographyComponent,
+    EditHellComponent,
+    SessionOpertionComponent,
+    WeddingOperationComponent,
+    PhotographyOperationComponent,
+    VideographyOperationComponent,
     EditVideographyComponent,
     EditHellComponent,
     EditSessionComponent,
     EditPhotographerComponent,
-
 
   ],
   imports: [
@@ -88,6 +100,7 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
