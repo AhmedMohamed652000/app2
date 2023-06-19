@@ -1,4 +1,4 @@
-.form-container {
+/* .form-container {
     background: linear-gradient(45deg, black, transparent);
     padding: 20px;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
     margin-top: 0px;
   }
-  
+
   form {
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
     position: relative;
     top: 15px;
   }
-  
+
   label {
     font-weight: bold;
     display: block;
@@ -26,7 +26,7 @@
 font-style: normal;
 
   }
-  
+
   input[type="text"],
   input[type="number"],
   input[type="file"],
@@ -40,7 +40,7 @@ font-style: normal;
     margin-bottom: 16px;
     resize: vertical;
   }
-  
+
   input[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -51,16 +51,16 @@ font-style: normal;
     transition: .3s ease-in-out ;
     letter-spacing: 2px;
   }
-  
+
   input[type="submit"]:hover {
     background-color: #45a049;
-      
+
     transform:scale(1.3);
   }
-  
+
   @media screen and (max-width: 600px) {
     input[type="submit"] {
       width: 100%;
     }
   }
-  
+   */

@@ -1,59 +1,30 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
-import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { apiUrl } from './API/config';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WiddingService {
+  constructor(private _HttpClient: HttpClient) {}
 
-  constructor(private _HttpClient:HttpClient) { }
-  
-  getTrending():Observable<any>
-  {
-    return this._HttpClient.get(`https://grad-proj.goicsoftware.com/api/wedding-halls`)
+  getTrending(): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}wedding-halls`);
   }
-  getMovieDetails(id:string):Observable<any>
-  {
-    return this._HttpClient.get(`https://grad-proj.goicsoftware.com/api/wedding-halls/show/${id}`)
+  getMovieDetails(id: string): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}wedding-halls/show/${id}`);
   }
 
-  getTrending1():Observable<any>{
-    return this._HttpClient.get(`https://grad-proj.goicsoftware.com/api/sessions`)
+  getTrending1(): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}sessions`);
   }
 
-  getMovieDetails2(id:string):Observable<any>
-  {
-    return this._HttpClient.get(` https://grad-proj.goicsoftware.com/api/sessions/show/${id}`)
+  getMovieDetails2(id: string): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}sessions/show/${id}`);
   }
 
-
-
-  
- 
-
-
-  addDetils(data: any): Observable<any> {
-    return this._HttpClient.post(`$https://grad-proj.goicsoftware.com/api/wedding-halls/store`, data);
+  addDetails(data: any): Observable<any> {
+    console.log(data);
+    return this._HttpClient.post(`$${apiUrl}wedding-halls/store`, data);
   }
-
-  // private apiUrl = 'https://grad-proj.goicsoftware.com/api/wedding-halls/store';
-
-  // createItem(item: any): Observable<any> {
-  //   return this._HttpClient.post(`${this.apiUrl}/items`, item);
-  // }
-
-  // getItems(): Observable<any[]> {
-  //   return this._HttpClient.get<any[]>(`${this.apiUrl}/items`);
-  // }
-
-  // submitHallDetails(data: any): Observable<any> {
-  //   return this._HttpClient.post(`$https://grad-proj.goicsoftware.com/api/wedding-halls/store`, data);
-  // }
-
-  // getHallDetails(): Observable<any> {
-  //   return this._HttpClient.get(`$https://grad-proj.goicsoftware.com/api/wedding-halls`);
-  // }
 }
-
-
- 

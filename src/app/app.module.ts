@@ -31,6 +31,8 @@ import { HellComponent } from './hell/hell.component';
 import { SessionDetailsComponent } from './session-details/session-details.component';
 import { SessionlistComponent } from './sessionlist/sessionlist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
+import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
+import { VideographyFormComponent } from './videography-form/videography-form.component';
 
 
 
@@ -62,6 +64,8 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
     SessionDetailsComponent,
     SessionlistComponent,
     ProfilepageComponent,
+    PhotographerFormComponent,
+    VideographyFormComponent,
     
 
     
