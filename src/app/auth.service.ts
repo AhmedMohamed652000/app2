@@ -41,7 +41,7 @@ export class AuthService {
     );
   }
   signinAdmin(formData: object): Observable<any> {
-    return this._HttpClient.post(`${apiUrl}auth/login`, formData);
+    return this._HttpClient.post(`${apiUrl}auth-admin/login`, formData);
   }
 
   signOut() {
