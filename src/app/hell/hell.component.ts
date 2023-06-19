@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Form, Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { WiddingService } from './../widding.service';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { apiUrl } from '../API/config';
 
 @Component({
   selector: 'app-hell',
@@ -9,44 +10,77 @@ import { WiddingService } from './../widding.service';
 })
 export class HellComponent {
   myForm: any;
-  fb: any;
   file: any;
+  hell: any;
+
+
+  cover_image($event:any) {
+    const file = $event.target.files[0];
+    this.hellData.append('cover_image', file);
+  }
+
+  VideoUpload($event:any) {
+    const file = $event.target.files[0];
+    this.hellData.append('video_upload', file);
+  }
+  ImagesUpload($event:any) {
+    const file = $event.target.files;
+    console.log(file)
+    const fileArray:any = [];
+    for (let i = 0; i < file.length; i++) {
+      this.hellData.append(`images[${i}]`, file[i]);
+    }
+  }
+
 
   constructor(
-    private WiddingService: WiddingService,
-    private _fb: FormBuilder
+    private fb: FormBuilder,
+    private http: HttpClient,
   ) {
-    this.myForm = this._fb.group({
-      Name: ['', Validators.required],
-      Style: ['', Validators.required],
-      TotalHellSpace: ['', Validators.required],
-      NumberofTables: ['', Validators.required],
-      UploadPhoto: ['', Validators.required],
-      Price: ['', Validators.required],
+    this.hell = this.fb.group({
+      name: new FormControl(null),
+      style: new FormControl(null, [Validators.required]),
+      location: new FormControl(null, [Validators.required]),
+      cover_image: new FormControl(null, [Validators.required]),
+      threeD_module: new FormControl(null, [Validators.required]),
+      open_day: new FormControl(null, [Validators.required]),
+      close_day: new FormControl(null, [Validators.required]),
+      price: new FormControl(null, [Validators.required]),
+      total_space: new FormControl(null, [Validators.required]),
+      chairs_no: new FormControl(null, [Validators.required]),
+      tables_no: new FormControl(null, [Validators.required]),
+      description: new FormControl(null, [Validators.required])
     });
   }
 
-  onSubmit() {
-    const formData = new FormData();
-    formData.append('UploadPhoto', this.myForm.get('UploadPhoto').value);
-    formData.append('Name', this.myForm.get('Name').value);
-    formData.append('Style', this.myForm.get('Style').value);
-    formData.append('TotalHellSpace', this.myForm.get('TotalHellSpace').value);
-    formData.append('NumberOfTables', this.myForm.get('NumberOfTables').value);
-    formData.append('Price', this.myForm.get('Price').value);
-    this.WiddingService.addDetails(formData).subscribe({
-      next: (res) => {
-        if (res.message == 'success') {
-          console.log('success');
-        } else {
-          console.log('no' + JSON.stringify(res));
-        }
+  headers = new HttpHeaders({
+    'Authorization': `Bearer ${localStorage.getItem('userToken')}`
+  });
+
+  hellData = new FormData();
+  onSubmit(formData1: any) {
+    console.log(formData1)
+    this.hellData.append('name', formData1.name);
+    this.hellData.append('style', formData1.style);
+    this.hellData.append('location', formData1.location);
+    this.hellData.append('open_day', formData1.open_day);
+    this.hellData.append('close_day', formData1.close_day);
+    this.hellData.append('price', formData1.price);
+    this.hellData.append('total_space', formData1.total_space);
+    this.hellData.append('chairs_no', formData1.chairs_no);
+    this.hellData.append('tables_no', formData1.tables_no);
+    this.hellData.append('description', formData1.description);
+
+    // Example using Angular HttpClient:
+    this.http.post(`${apiUrl}wedding-halls/store`, this.hellData, { headers: this.headers }).subscribe(
+      response => {
+        console.log('Hell created successfully', response);
+        // Perform any other actions as needed
       },
-    });
+      error => {
+        console.error('Error creating hell', error);
+        // Handle the error as needed
+      }
+    );
   }
-  onFileSelect(event: any) {
-    const file = event.target.files[0];
-    this.myForm.get('UploadPhoto')?.setValue(file);
-  }
-  ngOnInit(): void {}
 }
