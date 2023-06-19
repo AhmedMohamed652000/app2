@@ -33,8 +33,18 @@ import { SessionlistComponent } from './sessionlist/sessionlist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
+<<<<<<< client
 import { PhotographerListComponent } from './photographer-list/photographer-list.component';
 import { VideographyListComponent } from './videography-list/videography-list.component';
+=======
+import { EditVideographyComponent } from './edit-videography/edit-videography.component';
+import { EditHellComponent } from './edit-hell/edit-hell.component';
+import { CommonModule } from '@angular/common';
+import { SessionOpertionComponent } from './session-opertion/session-opertion.component';
+import { WeddingOperationComponent } from './wedding-operation/wedding-operation.component';
+import { PhotographyOperationComponent } from './photography-operation/photography-operation.component';
+import { VideographyOperationComponent } from './videography-operation/videography-operation.component';
+>>>>>>> local
 
 @NgModule({
   declarations: [
@@ -66,8 +76,18 @@ import { VideographyListComponent } from './videography-list/videography-list.co
     ProfilepageComponent,
     PhotographerFormComponent,
     VideographyFormComponent,
+<<<<<<< client
     PhotographerListComponent,
     VideographyListComponent,
+=======
+
+    EditVideographyComponent,
+    EditHellComponent,
+    SessionOpertionComponent,
+    WeddingOperationComponent,
+    PhotographyOperationComponent,
+    VideographyOperationComponent,
+>>>>>>> local
   ],
   imports: [
     BrowserModule,
@@ -76,6 +96,7 @@ import { VideographyListComponent } from './videography-list/videography-list.co
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

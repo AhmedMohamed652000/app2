@@ -18,7 +18,6 @@ export class VideographyListComponent {
     this._WiddingService.getVideoDetail(this.videoId).subscribe({
       next: (respsonse) => {
         this.video = respsonse.data;
-        console.log(this.video);
       },
     });
   }

@@ -21,7 +21,6 @@ export class PhotographerListComponent {
     this._WiddingService.getPhotoDetail(this.photoId).subscribe({
       next: (respsonse) => {
         this.photo = respsonse.data;
-        console.log(this.photo);
       },
     });
   }

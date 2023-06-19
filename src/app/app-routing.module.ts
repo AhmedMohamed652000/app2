@@ -28,7 +28,14 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
 import { PhotographerListComponent } from './photographer-list/photographer-list.component';
+<<<<<<< client
 import { VideographyListComponent } from './videography-list/videography-list.component';
+=======
+import { SessionOpertionComponent } from './session-opertion/session-opertion.component';
+import { PhotographyOperationComponent } from './photography-operation/photography-operation.component';
+import { WeddingOperationComponent } from './wedding-operation/wedding-operation.component';
+import { VideographyOperationComponent } from './videography-operation/videography-operation.component';
+>>>>>>> local
 
 const routes: Routes = [
   {
@@ -66,6 +73,16 @@ const routes: Routes = [
       { path: 'SessionDetails', component: SessionDetailsComponent },
       { path: 'Sessionlist/:id', component: SessionlistComponent },
       { path: 'Profilepage', component: ProfilepageComponent },
+      { path: 'sessionOperation', component: SessionOpertionComponent },
+      {
+        path: 'photographyOperation',
+        component: PhotographyOperationComponent,
+      },
+      { path: 'WeddingOperation', component: WeddingOperationComponent },
+      {
+        path: 'videographyOperation',
+        component: VideographyOperationComponent,
+      },
     ],
   },
   { path: 'footer', component: FooterComponent },

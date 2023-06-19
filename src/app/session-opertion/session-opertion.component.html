@@ -1,0 +1,25 @@
+<div class="container">
+  <div><h3 class="qq fw-bolder m-3">session</h3></div>
+  <div class="row">
+    <div
+      *ngFor="let session of trendingMovies1; let index = index"
+      class="col-md-3"
+    >
+      <div class="product-box">
+        <img src="{{ session.cover }}" class="w-100" alt="" />
+        <div class="product-name">{{ session.name }}</div>
+        <div class="product-price">{{ session.price }}</div>
+        <div>
+          <button
+            class="btn btn-primary"
+            [routerLink]="['/mohamed/Sessionlist', session.id]"
+          >
+            details
+          </button>
+          <button class="btn btn-info mx-2">edit</button>
+          <button class="btn btn-danger">delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
