@@ -1,51 +1,26 @@
-
 <div class="container">
-    <div class="row py-5">
-        <div class="col-md-4">
-            <div  class="product-box ">
-                <img class="nn " [src]="session1.cover" alt="">
-            </div>
+  <div class="row py-5">
+    <div class="col-md-4">
+      <div class="product-box">
+        <img class="img-fluid" src="{{ session1.cover }}" alt="" />
+      </div>
 
-            <h4  class="kkc">Hall</h4>
-            <h3 class="kk">{{session1.name}}</h3>
-            <!-- <p class="kkc">{{wedding.price}}</p> -->
-
-            <!-- <ul>
-                <li class="ko">price :{{wedding.price}}</li>
-            </ul> -->
-        </div> 
-        <div class="col-md-4">
-             <ul>
-                <li class="kom">price :{{session1.price}}</li>
-                <li class="kom">description :{{session1.description}}</li>
-                <li class="kom">created_at :{{session1.created_at}}</li>
-                <li class="kom ">location :{{session1.location}}</li>
-                <li class="kom">table_no :{{session1.table_no}}</li>
-                <li class="kom">chairs_no :{{session1.chairs_no}}</li>
-                <li class="kom">total_space :{{session1.total_space}}</li>
-                <li class="kom">style :{{session1.style}}</li>
-                
-                
-            </ul> 
-            <button class="jjk btn btn-primary py-3 px-3 w-50 m-auto">reservation</button>
-
-            
-        </div>
-
-       
-        
-
-       
+      <h3 class="text-center w-50 mt-2 ms-5">{{ session1.name }}</h3>
     </div>
+
+    <div class="col-md-4">
+      <ul class="list-unstyled">
+        <li><strong>Price:</strong> {{ session1.price }}</li>
+        <li><strong>Location:</strong> {{ session1.location }}</li>
+        <li><strong>Open_day:</strong> {{ session1.open_day }}</li>
+        <li><strong>close_day:</strong> {{ session1.close_day }}</li>
+        <li><strong>shoots_no:</strong> {{ session1.shoots_no }}</li>
+      </ul>
+      <button class="btn btn-primary btn-block mt-3">Reservation</button>
+    </div>
+    <div class="col-12 mt-5">
+      <h5>Description:</h5>
+      {{ session1.description }}
+    </div>
+  </div>
 </div>
-
-       
-
-   
-
-<!-- <h6>{{movieId}}</h6> -->
-
-
-
-
-

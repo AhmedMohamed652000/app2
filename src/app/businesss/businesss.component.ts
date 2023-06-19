@@ -25,6 +25,7 @@ export class BusinesssComponent implements OnInit {
       this._AuthService.signupAdmin(registerForm.value).subscribe({
         next: (response) => {
           if (response.success === true) {
+            localStorage.clear();
             this._Router.navigate(['/mohamed/Login2']);
           } else {
             this.errorMessage = response.message;

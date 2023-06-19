@@ -24,6 +24,7 @@ export class WiddingService {
   }
 
   addDetails(data: any): Observable<any> {
+    console.log(data);
     return this._HttpClient.post(`$${apiUrl}wedding-halls/store`, data);
   }
 }

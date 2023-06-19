@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./profilepage.component.css'],
 })
 export class ProfilepageComponent {
+  userData: any;
   constructor(private _AuthService: AuthService, private _Router: Router) {}
   isLogin: boolean = false;
   userInfo: any = {};
@@ -16,12 +17,15 @@ export class ProfilepageComponent {
   }
 
   ngOnInit(): void {
+    if (localStorage.getItem('userDate')) {
+      this.userData = JSON.parse(localStorage.getItem('userDate') || '{}');
+    }
+
     this._AuthService.UserData.subscribe({
       next: () => {
         if (this._AuthService.UserData.getValue() != null) {
           this.isLogin = true;
           this.userInfo = this._AuthService.UserData;
-          console.log(this.userInfo);
         } else {
           this.isLogin = false;
         }

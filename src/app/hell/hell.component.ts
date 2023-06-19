@@ -32,12 +32,12 @@ export class HellComponent {
     formData.append('Name', this.myForm.get('Name').value);
     formData.append('Style', this.myForm.get('Style').value);
     formData.append('TotalHellSpace', this.myForm.get('TotalHellSpace').value);
-    formData.append('NumberofTables', this.myForm.get('NumberofTables').value);
+    formData.append('NumberOfTables', this.myForm.get('NumberOfTables').value);
     formData.append('Price', this.myForm.get('Price').value);
     this.WiddingService.addDetails(formData).subscribe({
       next: (res) => {
         if (res.message == 'success') {
-          console.log('succes');
+          console.log('success');
         } else {
           console.log('no' + JSON.stringify(res));
         }

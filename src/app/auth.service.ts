@@ -41,11 +41,11 @@ export class AuthService {
     );
   }
   signinAdmin(formData: object): Observable<any> {
-    return this._HttpClient.post(`${apiUrl}auth-admin/login`, formData);
+    return this._HttpClient.post(`${apiUrl}auth/login`, formData);
   }
 
   signOut() {
-    localStorage.removeItem('userToken');
+    localStorage.clear();
     this.UserData.next(null);
     this._Router.navigate(['/mohamed/hompage']);
   }

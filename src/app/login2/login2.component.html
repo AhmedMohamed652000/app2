@@ -1,5 +1,5 @@
-<div class="wrapp">
-  <h2>Login</h2>
+<div class="container my-5 card p-3 w-75 m-auto shadow">
+  <h2 class="text-center mb-4">Login</h2>
 
   <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
   <form
@@ -7,13 +7,13 @@
     (ngSubmit)="subitLoginForm(loginForm)"
     [formGroup]="loginForm"
   >
-    <div class="input-box">
-      <label for="email">email :</label>
+    <div class="form-group">
+      <label for="email" class="form-label">Email:</label>
       <input type="email" formControlName="email" class="form-control mb-2" />
     </div>
 
-    <div class="input-box">
-      <label for="password">password :</label>
+    <div class="form-group">
+      <label for="password" class="form-label">Password:</label>
       <input
         type="password"
         formControlName="password"
@@ -21,7 +21,7 @@
       />
     </div>
 
-    <div class="input-box button">
+    <div class="form-group text-center">
       <button type="submit" [disabled]="loginForm.invalid" class="btn btn-info">
         <span>Login</span>
       </button>
