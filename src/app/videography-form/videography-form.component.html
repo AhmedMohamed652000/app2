@@ -2,157 +2,117 @@
   <h4 class="alert alert-primary text-center">
     Fill in the videography details
   </h4>
-  <form action="submit">
+  <form
+    [formGroup]="videography"
+    (ngSubmit)="onSubmit(videography.value)"
+    encType="multipart/form-data"
+  >
     <div class="row">
       <div class="col-md-6">
         <div class="mb-1">
-          <label for="name" class="form-label">Name</label>
+          <label for="name" class="form-label">Name of videography:</label>
           <input
             class="form-control"
             type="text"
-            id="name"
-            name="name"
+            formControlName="name"
             required
           />
         </div>
       </div>
       <div class="col-md-6">
-        <div class="mb-1">
-          <label for="price" class="form-label">photographer price:</label>
-          <input
-            class="form-control"
-            type="number"
-            id="price"
-            name="price"
-            required
-          />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mb-1">
-          <label for="shooting" class="form-label">Number of shootings:</label>
-          <input
-            class="form-control"
-            type="number"
-            id="shooting"
-            name="shooting"
-            required
-          />
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="mb-1">
-          <label for="cover_image" class="form-label"
-            >Upload cover image:</label
-          >
-          <input
-            class="form-control"
-            type="file"
-            id="cover_image"
-            name="cover_image"
-            accept="image/*"
-            required
-          />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mb-1">
-          <label for="video_upload" class="form-label">Upload video:</label>
-          <input
-            class="form-control"
-            type="file"
-            id="video_upload"
-            name="video_upload"
-            required
-          />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mb-1">
-          <label for="videos[0]" class="form-label"> video 0 :</label>
-          <input
-            class="form-control"
-            type="file"
-            id="videos[0]"
-            name="videos[0]"
-            required
-          />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mb-1">
-          <label for="videos[1]" class="form-label"> video 1 :</label>
-          <input
-            class="form-control"
-            type="file"
-            id="videos[1]"
-            name="videos[1]"
-            required
-          />
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="mb-1">
-          <label for="open_day" class="form-label">open day:</label>
-          <input
-            class="form-control"
-            id="open_day"
-            name="open_day"
-            type="text"
-            required
-          />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mb-1">
-          <label for="close_day" class="form-label">close day:</label>
-          <input
-            class="form-control"
-            id="close_day"
-            name="close_day"
-            type="text"
-            required
-          />
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mb-1">
-          <label for="price" class="form-label">price:</label>
-          <input
-            class="form-control"
-            id="price"
-            name="price"
-            type="number"
-            required
-          />
-        </div>
-      </div>
-      <div class="col-md-12">
         <div class="mb-1">
           <label for="location" class="form-label">Location:</label>
           <input
             class="form-control"
-            id="location"
-            name="location"
             type="text"
+            formControlName="location"
             required
           />
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="cover_image" class="form-label">Cover Image:</label>
+          <input
+            class="form-control"
+            (change)="cover_image($event)"
+            type="file"
+            formControlName="cover_image"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="images" class="form-label">Video:</label>
+          <input
+            class="form-control"
+            (change)="VideoUpload($event)"
+            type="file"
+            multiple
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="price" class="form-label">Price:</label>
+          <input
+            class="form-control"
+            type="number"
+            formControlName="price"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="open_day" class="form-label">Open Day:</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="open_day"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="close_day" class="form-label">Close Day:</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="close_day"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="images" class="form-label">Videoes:</label>
+          <input
+            class="form-control"
+            (change)="VidoesUpload($event)"
+            type="file"
+            multiple
+            required
+          />
+        </div>
+      </div>
+
       <div class="col-12">
         <div class="mb-1">
           <label for="description" class="form-label">Description:</label>
           <textarea
-            id="description"
             class="form-control"
-            name="description"
+            formControlName="description"
             required
           ></textarea>
         </div>
       </div>
     </div>
-    <button type="submit" class="btn-primary btn mt-3 w-100">send</button>
+    <button type="submit" class="btn-primary btn mt-3 w-100">Send</button>
   </form>
 </div>

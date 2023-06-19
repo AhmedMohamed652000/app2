@@ -1,14 +1,23 @@
 <div class="container card mt-5 p-4">
-  <h4 class="alert alert-primary text-center"> Fill in the photographer details  </h4>
+  <h4 class="alert alert-primary text-center">edit Session details</h4>
   <form
-    [formGroup]="photographer"
-    (ngSubmit)="onSubmit(photographer.value)"
+    [formGroup]="session"
+    (ngSubmit)="onSubmit(session.value)"
     encType="multipart/form-data"
   >
     <div class="row">
       <div class="col-md-6">
+        <div class="mb-1 d-none">
+          <label for="name" class="form-label">Name of session:</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="name"
+            required
+          />
+        </div>
         <div class="mb-1">
-          <label for="name" class="form-label">Name of photographer:</label>
+          <label for="name" class="form-label">Name of session:</label>
           <input
             class="form-control"
             type="text"
@@ -41,7 +50,18 @@
         </div>
       </div>
 
-
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="video_upload" class="form-label">Video Upload:</label>
+          <input
+            class="form-control"
+            (change)="VideoUpload($event)"
+            type="file"
+            formControlName="video_upload"
+            required
+          />
+        </div>
+      </div>
       <div class="col-md-6">
         <div class="mb-1">
           <label for="open_day" class="form-label">Open Day:</label>
@@ -64,7 +84,29 @@
           />
         </div>
       </div>
-
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="price" class="form-label">Price:</label>
+          <input
+            class="form-control"
+            type="number"
+            formControlName="price"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="shooting" class="form-label">Number of shootings:</label>
+          <input
+            class="form-control"
+            type="number"
+            id="shooting"
+            formControlName="shoots_no"
+            required
+          />
+        </div>
+      </div>
       <div class="col-md-6">
         <div class="mb-1">
           <label for="images" class="form-label">Images:</label>

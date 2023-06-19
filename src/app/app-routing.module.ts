@@ -27,16 +27,18 @@ import { WiddinglistComponent } from './widdinglist/widdinglist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
-import { PhotographerListComponent } from './photographer-list/photographer-list.component';
-<<<<<<< client
-import { VideographyListComponent } from './videography-list/videography-list.component';
-=======
+
+
 import { SessionOpertionComponent } from './session-opertion/session-opertion.component';
 import { PhotographyOperationComponent } from './photography-operation/photography-operation.component';
 import { WeddingOperationComponent } from './wedding-operation/wedding-operation.component';
 import { VideographyOperationComponent } from './videography-operation/videography-operation.component';
->>>>>>> local
-
+import { EditVideographyComponent } from './edit-videography/edit-videography.component';
+import { EditHellComponent } from './edit-hell/edit-hell.component';
+import { VideographyListComponent } from './videography-list/videography-list.component';
+import { PhotographerListComponent } from './photographer-list/photographer-list.component';
+import { EditSessionComponent } from './edit-session/edit-session.component';
+import { EditPhotographerComponent } from './edit-photographer/edit-photographer.component';
 const routes: Routes = [
   {
     path: '',
@@ -58,7 +60,6 @@ const routes: Routes = [
       { path: 'VideographyForm', component: VideographyFormComponent },
       { path: 'videography2', component: Videography2Component },
       { path: 'videographyList/:id', component: VideographyListComponent },
-
       { path: 'homepage', component: HomepageComponent },
       { path: 'Photographer2', component: Photographer2Component },
       { path: 'session2', component: Session2Component },
@@ -71,6 +72,10 @@ const routes: Routes = [
       { path: 'Business1', component: Business1Component },
       { path: 'hell', component: HellComponent },
       { path: 'SessionDetails', component: SessionDetailsComponent },
+      { path: 'videography/:id/edit', component: EditVideographyComponent },
+      { path: 'hell/:id/edit', component: EditHellComponent },
+      { path: 'session/:id/edit', component: EditSessionComponent },
+      { path: 'photographer/:id/edit', component: EditPhotographerComponent },
       { path: 'Sessionlist/:id', component: SessionlistComponent },
       { path: 'Profilepage', component: ProfilepageComponent },
       { path: 'sessionOperation', component: SessionOpertionComponent },

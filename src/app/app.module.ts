@@ -33,10 +33,9 @@ import { SessionlistComponent } from './sessionlist/sessionlist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
-<<<<<<< client
 import { PhotographerListComponent } from './photographer-list/photographer-list.component';
 import { VideographyListComponent } from './videography-list/videography-list.component';
-=======
+
 import { EditVideographyComponent } from './edit-videography/edit-videography.component';
 import { EditHellComponent } from './edit-hell/edit-hell.component';
 import { CommonModule } from '@angular/common';
@@ -44,7 +43,12 @@ import { SessionOpertionComponent } from './session-opertion/session-opertion.co
 import { WeddingOperationComponent } from './wedding-operation/wedding-operation.component';
 import { PhotographyOperationComponent } from './photography-operation/photography-operation.component';
 import { VideographyOperationComponent } from './videography-operation/videography-operation.component';
->>>>>>> local
+
+import { EditVideographyComponent } from './edit-videography/edit-videography.component';
+import { EditHellComponent } from './edit-hell/edit-hell.component';
+import { EditSessionComponent } from './edit-session/edit-session.component';
+import { EditPhotographerComponent } from './edit-photographer/edit-photographer.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -76,21 +80,21 @@ import { VideographyOperationComponent } from './videography-operation/videograp
     ProfilepageComponent,
     PhotographerFormComponent,
     VideographyFormComponent,
-<<<<<<< client
-    PhotographerListComponent,
-    VideographyListComponent,
-=======
-
     EditVideographyComponent,
     EditHellComponent,
     SessionOpertionComponent,
     WeddingOperationComponent,
     PhotographyOperationComponent,
     VideographyOperationComponent,
->>>>>>> local
+    EditVideographyComponent,
+    EditHellComponent,
+    EditSessionComponent,
+    EditPhotographerComponent,
+
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,

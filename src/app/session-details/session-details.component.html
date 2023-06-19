@@ -1,6 +1,10 @@
 <div class="container card mt-5 p-4">
   <h4 class="alert alert-primary text-center">Fill in the Session details</h4>
-  <form action="submit">
+  <form
+    [formGroup]="session"
+    (ngSubmit)="onSubmit(session.value)"
+    encType="multipart/form-data"
+  >
     <div class="row">
       <div class="col-md-6">
         <div class="mb-1">
@@ -8,20 +12,76 @@
           <input
             class="form-control"
             type="text"
-            id="name"
-            name="name"
+            formControlName="name"
             required
           />
         </div>
       </div>
       <div class="col-md-6">
         <div class="mb-1">
-          <label for="price" class="form-label">Session price:</label>
+          <label for="location" class="form-label">Location:</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="location"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="cover_image" class="form-label">Cover Image:</label>
+          <input
+            class="form-control"
+            (change)="cover_image($event)"
+            type="file"
+            formControlName="cover_image"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="video_upload" class="form-label">Video Upload:</label>
+          <input
+            class="form-control"
+            (change)="VideoUpload($event)"
+            type="file"
+            formControlName="video_upload"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="open_day" class="form-label">Open Day:</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="open_day"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="close_day" class="form-label">Close Day:</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="close_day"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="price" class="form-label">Price:</label>
           <input
             class="form-control"
             type="number"
-            id="price"
-            name="price"
+            formControlName="price"
             required
           />
         </div>
@@ -33,50 +93,35 @@
             class="form-control"
             type="number"
             id="shooting"
-            name="shooting"
+            formControlName="shoots_no"
             required
           />
         </div>
       </div>
-
       <div class="col-md-6">
         <div class="mb-1">
-          <label for="photo" class="form-label">Upload session photo:</label>
+          <label for="images" class="form-label">Images:</label>
           <input
             class="form-control"
+            (change)="ImagesUpload($event)"
             type="file"
-            id="photo"
-            name="photo"
-            accept="image/*"
+            multiple
             required
           />
         </div>
       </div>
 
-      <div class="col-12">
-        <div class="mb-1">
-          <label for="location" class="form-label">Location:</label>
-          <input
-            class="form-control"
-            id="location"
-            name="location"
-            type="text"
-            required
-          />
-        </div>
-      </div>
       <div class="col-12">
         <div class="mb-1">
           <label for="description" class="form-label">Description:</label>
           <textarea
-            id="description"
             class="form-control"
-            name="description"
+            formControlName="description"
             required
           ></textarea>
         </div>
       </div>
     </div>
-    <button type="submit" class="btn-primary btn mt-3 w-100">send</button>
+    <button type="submit" class="btn-primary btn mt-3 w-100">Send</button>
   </form>
 </div>
