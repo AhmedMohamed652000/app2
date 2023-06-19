@@ -16,10 +16,11 @@ export class AppComponent {
           if(val.url==='/mohamed/party'){
             this.showNavbar=false
           }
-          
+
           else{
             this.showNavbar= true
           }
+
           if(val.url==='/mohamed/client'){
             this.showNavbar=false
           }
@@ -27,7 +28,7 @@ export class AppComponent {
            if(val.url=='/mohamed/session'){
             this.showNavbar=false
           }
-          
+
            if(val.url=='/mohamed/Photographer'){
             this.showNavbar=false
           }
@@ -59,10 +60,19 @@ export class AppComponent {
           if(val.url=='/mohamed/widding'){
             this.showNavbar=false
           }
-         
-          
-          
-          
+          if(val.url=='/mohamed/PhotographerForm'){
+            this.showNavbar=false
+          }
+          if(val.url=='/mohamed/VideographyForm'){
+            this.showNavbar=false
+          }
+          if(val.url.includes('edit')){
+            this.showNavbar=false
+          }
+
+
+
+
         }
       }
     )
@@ -71,7 +81,7 @@ export class AppComponent {
 
 
 
-  
- 
+
+
 }
 
