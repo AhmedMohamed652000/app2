@@ -19,10 +19,10 @@ import { Photographer2Component } from './photographer2/photographer2.component'
 import { FooterComponent } from './footer/footer.component';
 import { Session2Component } from './session2/session2.component';
 import { Widding2Component } from './widding2/widding2.component';
-import{ HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { WiddinglistComponent } from './widdinglist/widdinglist.component';
 import { BusinesssComponent } from './businesss/businesss.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { Login2Component } from './login2/login2.component';
@@ -33,8 +33,8 @@ import { SessionlistComponent } from './sessionlist/sessionlist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
-
-
+import { PhotographerListComponent } from './photographer-list/photographer-list.component';
+import { VideographyListComponent } from './videography-list/videography-list.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,7 @@ import { VideographyFormComponent } from './videography-form/videography-form.co
     Session2Component,
     Widding2Component,
     WiddinglistComponent,
-     BusinesssComponent,
+    BusinesssComponent,
     RegisterComponent,
     LoginComponent,
     Login2Component,
@@ -66,27 +66,18 @@ import { VideographyFormComponent } from './videography-form/videography-form.co
     ProfilepageComponent,
     PhotographerFormComponent,
     VideographyFormComponent,
-    
-
-    
-   
+    PhotographerListComponent,
+    VideographyListComponent,
   ],
   imports: [
-  
-BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule,ReactiveFormsModule,
-  
-   
-    
-    
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
- 
-
 })
-
-
-export class AppModule { }
+export class AppModule {}

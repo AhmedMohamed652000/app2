@@ -1,150 +1,15 @@
-<div class="container ">
-    <div><h3 class="qq fw-bolder m-3">videography</h3></div>
-
-
-    
-    <div class="bn d-flex justify-content-end ">
-      <!-- <div class="view">
-        <a href="" (click)="ggox()" routerLink="View all">View all</a>
-      </div> -->
-    </div>
-
-
-    <div class="row gx-5">
-      <div class="col-md-3">
-        <div class="product-box ">
-          <img src="../../assets/imags/تعلم_أهم_قواعد_التصوير_الليلي.jpeg" alt="Product Image">
-          <div class="product-name">mohamed</div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">300$</div>
-          <div class="product-evaluation">
-           
-  
-  <div *ngFor="let rating9 of ratings9">
-    <ng-container *ngFor="let star of stars9; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating9.value" (click)="changeRating9(rating9, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="col-md-3">
+<div class="container">
+  <div><h3 class="qq fw-bolder m-3">videography</h3></div>
+  <div class="row gx-5">
+    <div class="col-md-3" *ngFor="let item of allVideographer">
+      <div [routerLink]="['/mohamed/videographyList', item.id]">
         <div class="product-box">
-          <img src="../../assets/imags/أنواع-التصوير-الفوتوغرافي.webp" alt="Product Image">
-          <div class="product-name">ahmed</div>
+          <img [src]="item.cover" alt="Product Image" />
+          <div class="product-name">{{ item.name }}</div>
           <div class="product-hall">Videography</div>
-          <div class="product-price">200$</div>
-          <div class="product-evaluation">
-            
-  <div *ngFor="let rating10 of ratings10">
-    <ng-container *ngFor="let star of stars10; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating10.value" (click)="changeRating10(rating10, i + 1)"></i>
-    </ng-container>
-  </div>
-          </div>
+          <div class="product-price">{{ item.price }}$</div>
         </div>
       </div>
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/ضبط-اعدادات-الكاميرا-3.jpeg" alt="Product Image" alt="Product Image">
-          <div class="product-name">abdwlaziz</div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">350$</div>
-          <div class="product-evaluation">
-             
-  <div *ngFor="let rating11 of ratings11">
-    <ng-container *ngFor="let star of stars11; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating11.value" (click)="changeRating11(rating11, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-   
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/2017-636419622041055503-105.jpg" alt="Product Image" alt="Product Image">
-          <div class="product-name">elrefeey</div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">500$</div>
-          <div class="product-evaluation">
-             
-  <div *ngFor="let rating11 of ratings11">
-    <ng-container *ngFor="let star of stars11; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating11.value" (click)="changeRating11(rating11, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
-  
-
-
-
-  <div class="container ">
-    <div class="bn d-flex justify-content-end ">
-      <!-- <div class="view">
-        <a href="" (click)="ggox()" routerLink="View all">View all</a>
-      </div> -->
-    </div>
-
-
-    <div class="row gx-5">
-      <div class="col-md-3">
-        <div class="product-box ">
-          <img src="../../assets/imags/51h3Bvx13EL._AC_SY780_.jpg" alt="Product Image">
-          <div class="product-name">nahed </div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">450$</div>
-          <div class="product-evaluation">
-           
-  
-  <div *ngFor="let rating9 of ratings9">
-    <ng-container *ngFor="let star of stars9; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating9.value" (click)="changeRating9(rating9, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/447134.webp" alt="Product Image">
-          <div class="product-name">samir</div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">600$</div>
-          <div class="product-evaluation">
-            
-  <div *ngFor="let rating10 of ratings10">
-    <ng-container *ngFor="let star of stars10; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating10.value" (click)="changeRating10(rating10, i + 1)"></i>
-    </ng-container>
-  </div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-  
-
- 
+</div>

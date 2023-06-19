@@ -21,10 +21,22 @@
       />
     </div>
 
-    <div class="form-group text-center">
-      <button type="submit" [disabled]="loginForm.invalid" class="btn btn-info">
+    <div class="form-group text-center mt-3">
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="btn btn-info w-100"
+      >
         <span>Login</span>
       </button>
+    </div>
+    <div class="form-group mb-2">
+      <span routerLink="/mohamed/Businesss"
+        >If you have not an account, go to the
+        <a class="text-decoration-underline" style="cursor: pointer"
+          >Registration page</a
+        >
+      </span>
     </div>
   </form>
 </div>

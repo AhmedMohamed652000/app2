@@ -27,6 +27,8 @@ import { WiddinglistComponent } from './widdinglist/widdinglist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
+import { PhotographerListComponent } from './photographer-list/photographer-list.component';
+import { VideographyListComponent } from './videography-list/videography-list.component';
 
 const routes: Routes = [
   {
@@ -44,10 +46,13 @@ const routes: Routes = [
       { path: 'session', component: SessionComponent },
       { path: 'Photographer', component: PhotographerComponent },
       { path: 'PhotographerForm', component: PhotographerFormComponent },
+      { path: 'PhotographerList/:id', component: PhotographerListComponent },
       { path: 'Videography', component: VideographyComponent },
       { path: 'VideographyForm', component: VideographyFormComponent },
-      { path: 'homepage', component: HomepageComponent },
       { path: 'videography2', component: Videography2Component },
+      { path: 'videographyList/:id', component: VideographyListComponent },
+
+      { path: 'homepage', component: HomepageComponent },
       { path: 'Photographer2', component: Photographer2Component },
       { path: 'session2', component: Session2Component },
       { path: 'widding2', component: Widding2Component },
