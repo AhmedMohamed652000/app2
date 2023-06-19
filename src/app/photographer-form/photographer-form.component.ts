@@ -56,7 +56,6 @@ export class PhotographerFormComponent {
 
   photographerData = new FormData();
   onSubmit(formData1: any) {
-    console.log(formData1)
     this.photographerData.append('name', formData1.name);
     this.photographerData.append('location', formData1.location);
     this.photographerData.append('open_day', formData1.open_day);

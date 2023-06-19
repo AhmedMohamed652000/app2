@@ -31,6 +31,8 @@ import { EditVideographyComponent } from './edit-videography/edit-videography.co
 import { EditHellComponent } from './edit-hell/edit-hell.component';
 import { VideographyListComponent } from './videography-list/videography-list.component';
 import { PhotographerListComponent } from './photographer-list/photographer-list.component';
+import { EditSessionComponent } from './edit-session/edit-session.component';
+import { EditPhotographerComponent } from './edit-photographer/edit-photographer.component';
 
 const routes: Routes = [
   {
@@ -67,6 +69,8 @@ const routes: Routes = [
       { path: 'SessionDetails', component: SessionDetailsComponent },
       { path: 'videography/:id/edit', component: EditVideographyComponent },
       { path: 'hell/:id/edit', component: EditHellComponent },
+      { path: 'session/:id/edit', component: EditSessionComponent },
+      { path: 'photographer/:id/edit', component: EditPhotographerComponent },
       { path: 'Sessionlist/:id', component: SessionlistComponent },
       { path: 'Profilepage', component: ProfilepageComponent },
     ],
