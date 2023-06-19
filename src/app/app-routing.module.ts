@@ -27,6 +27,8 @@ import { WiddinglistComponent } from './widdinglist/widdinglist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
+import { EditVideographyComponent } from './edit-videography/edit-videography.component';
+import { EditHellComponent } from './edit-hell/edit-hell.component';
 
 const routes: Routes = [
   {
@@ -59,6 +61,8 @@ const routes: Routes = [
       { path: 'Business1', component: Business1Component },
       { path: 'hell', component: HellComponent },
       { path: 'SessionDetails', component: SessionDetailsComponent },
+      { path: 'videography/:id/edit', component: EditVideographyComponent },
+      { path: 'hell/:id/edit', component: EditHellComponent },
       { path: 'Sessionlist/:id', component: SessionlistComponent },
       { path: 'Profilepage', component: ProfilepageComponent },
     ],

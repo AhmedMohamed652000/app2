@@ -33,6 +33,8 @@ import { SessionlistComponent } from './sessionlist/sessionlist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
+import { EditVideographyComponent } from './edit-videography/edit-videography.component';
+import { EditHellComponent } from './edit-hell/edit-hell.component';
 
 
 
@@ -66,6 +68,8 @@ import { VideographyFormComponent } from './videography-form/videography-form.co
     ProfilepageComponent,
     PhotographerFormComponent,
     VideographyFormComponent,
+    EditVideographyComponent,
+    EditHellComponent,
     
 
     
