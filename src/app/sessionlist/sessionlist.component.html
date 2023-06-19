@@ -22,5 +22,27 @@
       <h5>Description:</h5>
       {{ session1.description }}
     </div>
+
+    <div class="col-12 mt-5">
+      <h5>Images:</h5>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let image of session1.images">
+          <img class="img-fluid rounded mb-3" style="height: 280px;" [src]="image.path" alt="Wedding Hall" />
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-5">
+      <h5>Videos:</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <video class="w-100" controls>
+              <source src="{{session1.video}}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

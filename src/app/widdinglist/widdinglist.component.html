@@ -2,10 +2,9 @@
   <div class="row py-5">
     <div class="col-md-4">
       <div class="product-box">
-        <img class="img-fluid p-3" [src]="wedding.cover" alt="Wedding Hall" />
+        <img class="img-fluid rounded p-3" [src]="wedding.cover" alt="Wedding Hall" />
       </div>
-
-      <h3 class="text-center w-50 mt-2 ms-5">{{ wedding.name }}</h3>
+      <h3 class="text-center mt-3">{{ wedding.name }}</h3>
     </div>
     <div class="col-md-4">
       <ul class="list-unstyled">
@@ -22,6 +21,27 @@
     <div class="col-12 mt-5">
       <h5>Description:</h5>
       <p>{{ wedding.description }}</p>
+    </div>
+    <div class="col-12 mt-5">
+      <h5>Images:</h5>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let image of wedding.images">
+          <img class="img-fluid rounded mb-3" style="height: 280px;" [src]="image.path" alt="Wedding Hall" />
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-5">
+      <h5>Videos:</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <video class="w-100" controls>
+              <source [src]="wedding.video" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
