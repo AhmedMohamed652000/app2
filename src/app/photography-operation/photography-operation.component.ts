@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { WiddingService } from '../widding.service';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { apiUrl } from '../API/config';
 @Component({
   selector: 'app-photography-operation',
   templateUrl: './photography-operation.component.html',
@@ -26,8 +28,27 @@ export class PhotographyOperationComponent {
   constructor(
     private _Router: Router,
     private _AuthService: AuthService,
-    private _WiddingService: WiddingService
+    private _WiddingService: WiddingService,
+    private http:HttpClient
   ) {}
+
+  headers = new HttpHeaders({
+    'Authorization': `Bearer ${localStorage.getItem('userToken')}`
+  });
+
+  deletFun(Id: number) {
+    this.http.delete(`${apiUrl}photographer/delete/${Id}`,{headers:this.headers})
+      .subscribe(
+        () => {
+          alert("delete successflly")
+          window.location.reload();
+        },
+        error => {
+          alert('Error deleting');
+        }
+      );
+  }
+
   allPhotographer: any = [];
   ngOnInit(): void {
     this._WiddingService.getAllPhotographer().subscribe({

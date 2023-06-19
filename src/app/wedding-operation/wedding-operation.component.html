@@ -17,8 +17,8 @@
           >
             details
           </button>
-          <button class="btn btn-info mx-2">edit</button>
-          <button class="btn btn-danger">delete</button>
+          <button class="btn btn-info mx-2" [routerLink]="['/mohamed/hell/edit/',movie.id]">edit</button>
+          <button (click)="deletFun(movie.id)" class="btn btn-danger">delete</button>
         </div>
       </div>
     </div>
