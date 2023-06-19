@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row py-5">
+    <div class="col-md-4">
+      <div class="product-box">
+        <img
+          class="img-fluid rounded p-3"
+          [src]="video.cover"
+          alt="video Hall"
+        />
+      </div>
+      <h3 class="text-center mt-3">{{ video.name }}</h3>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-unstyled">
+        <li><strong>Price:</strong> {{ video.price }}$</li>
+        <li><strong>Location:</strong> {{ video.location }}</li>
+        <li><strong>open day:</strong> {{ video.open_day }}</li>
+        <li><strong>close day:</strong> {{ video.close_day }}</li>
+      </ul>
+      <button class="btn btn-primary btn-block mt-3">Reservation</button>
+    </div>
+    <div class="col-12 mt-5">
+      <h5>Description:</h5>
+      <p>{{ video.description }}</p>
+    </div>
+    <div class="col-12 mt-5">
+      <h5>Videos:</h5>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let item of video.videos">
+          <video class="w-100" controls>
+            <source [src]="item.path" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-5">
+      <h5>Video:</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <video class="w-100" controls>
+              <source [src]="video.video" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

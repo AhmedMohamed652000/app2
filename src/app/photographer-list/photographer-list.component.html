@@ -2,38 +2,33 @@
   <div class="row py-5">
     <div class="col-md-4">
       <div class="product-box">
-        <img
-          class="img-fluid rounded p-3"
-          [src]="wedding.cover"
-          alt="Wedding Hall"
-        />
+        <img class="img-fluid" src="{{ photo.cover }}" alt="" />
       </div>
-      <h3 class="text-center mt-3">{{ wedding.name }}</h3>
+
+      <h3 class="text-center w-50 mt-2 ms-5">{{ photo.name }}</h3>
     </div>
     <div class="col-md-4">
       <ul class="list-unstyled">
-        <li><strong>Style:</strong> {{ wedding.style }}</li>
-        <li><strong>Price:</strong> {{ wedding.price }}</li>
-        <li><strong>Location:</strong> {{ wedding.location }}</li>
-        <li><strong>Table Number:</strong> {{ wedding.tables_no }}</li>
-        <li><strong>Chairs Number:</strong> {{ wedding.chairs_no }}</li>
-        <li><strong>Total Space:</strong> {{ wedding.total_space }}</li>
-        <li><strong>Tables Number:</strong> {{ wedding.tables_no }}</li>
+        <li><strong>Price:</strong> {{ photo.price }}</li>
+        <li><strong>Location:</strong> {{ photo.location }}</li>
+        <li><strong>Open_day:</strong> {{ photo.open_day }}</li>
+        <li><strong>close_day:</strong> {{ photo.close_day }}</li>
       </ul>
       <button class="btn btn-primary btn-block mt-3">Reservation</button>
     </div>
     <div class="col-12 mt-5">
       <h5>Description:</h5>
-      <p>{{ wedding.description }}</p>
+      {{ photo.description }}
     </div>
+
     <div class="col-12 mt-5">
       <h5>Images:</h5>
       <div class="row">
-        <div class="col-md-4" *ngFor="let image of wedding.images">
+        <div class="col-md-4" *ngFor="let image of photo.images">
           <img
-            class="img-fluid rounded mb-3"
-            style="height: 280px"
+            class="img-fluid rounded mb-3 w-100"
             [src]="image.path"
+            style="height: 200px"
             alt="Wedding Hall"
           />
         </div>
@@ -45,7 +40,7 @@
         <div class="col-md-6">
           <div class="embed-responsive embed-responsive-16by9">
             <video class="w-100" controls>
-              <source [src]="wedding.video" type="video/mp4" />
+              <source src="{{ photo.video }}" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

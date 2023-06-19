@@ -8,17 +8,31 @@ import { apiUrl } from './API/config';
 export class WiddingService {
   constructor(private _HttpClient: HttpClient) {}
 
-  getTrending(): Observable<any> {
+  getAllWedding(): Observable<any> {
     return this._HttpClient.get(`${apiUrl}wedding-halls`);
   }
-  getMovieDetails(id: string): Observable<any> {
-    return this._HttpClient.get(`${apiUrl}wedding-halls/show/${id}`);
-  }
 
-  getTrending1(): Observable<any> {
+  getAllSessions(): Observable<any> {
     return this._HttpClient.get(`${apiUrl}sessions`);
   }
 
+  getAllPhotographer(): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}photographer`);
+  }
+  getAllVideographer(): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}videographer`);
+  }
+
+  getVideoDetail(id: string): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}videographer/show/${id}`);
+  }
+  getPhotoDetail(id: string): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}photographer/show/${id}`);
+  }
+
+  getMovieDetails(id: string): Observable<any> {
+    return this._HttpClient.get(`${apiUrl}wedding-halls/show/${id}`);
+  }
   getMovieDetails2(id: string): Observable<any> {
     return this._HttpClient.get(`${apiUrl}sessions/show/${id}`);
   }

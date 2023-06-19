@@ -1,434 +1,149 @@
+<div *ngIf="isLogin" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="mmm d-flex position-relative">
+        <img src="../../assets/imags/R 1.png" class="w-100" alt="" />
+        <h2 class="fw-bolder position-absolute m-5">wedding</h2>
+      </div>
+    </div>
+  </div>
 
+  <!-- Wedding -->
+  <div class="container">
+    <div><h3 class="">Wedding</h3></div>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let item of firstFourWedding">
+        <div [routerLink]="['/mohamed/widdinglist/', item.id]">
+          <div class="product-box">
+            <img [src]="item.cover" alt="Product Image" />
+            <div class="product-name">{{ item.name }}</div>
+            <div class="product-hall">{{ item.style }}</div>
+            <div class="product-price">{{ item.price }}$</div>
+            <div class="product-evaluation">
+              <div *ngFor="let rating of ratings1">
+                <ng-container *ngFor="let star of stars1; index as i">
+                  <i
+                    class="fa fa-star"
+                    [class.filled]="i < rating.value"
+                    (click)="changeRating1(rating, i + 1)"
+                  ></i>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
- 
+  <!--session  -->
+  <div class="container">
+    <div><h3 class="qq fw-bolder m-3">session</h3></div>
+    <div class="as d-flex justify-content-end"></div>
 
-  <div *ngIf="isLogin"class="container">
-<div class="row">
-  <div class="col-md-12">
-    <div class="mmm d-flex position-relative">
-      <img src="../../assets/imags/R 1.png" class="w-100" alt="">
-      <h2 class="fw-bolder  position-absolute m-5">wedding</h2>
+    <div class="row gx-5">
+      <div class="col-md-3" *ngFor="let item of firstFourSession">
+        <div [routerLink]="['/mohamed/Sessionlist', item.id]">
+          <div class="product-box">
+            <img [src]="item.cover" alt="Product Image" />
+            <div class="product-name">{{ item.name }}</div>
+            <div class="product-hall">Session</div>
+            <div class="product-price">{{ item.price }}$</div>
+            <div class="product-evaluation">
+              <div *ngFor="let rating3 of ratings3">
+                <ng-container *ngFor="let star of stars3; index as i">
+                  <i
+                    class="fa fa-star"
+                    [class.filled]="i < rating3.value"
+                    (click)="changeRating3(rating3, i + 1)"
+                  ></i>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  photographer   -->
+  <div class="container">
+    <div><h3 class="qq fw-bolder m-3">photographer</h3></div>
+    <div class="row gx-5">
+      <div class="col-md-3" *ngFor="let item of firstFourPhotographer">
+        <div [routerLink]="['/mohamed/PhotographerList', item.id]">
+          <div class="product-box">
+            <img [src]="item.cover" alt="Product Image" />
+            <div class="product-name">{{ item.name }}</div>
+            <div class="product-hall">Photographer</div>
+            <div class="product-price">{{ item.price }}$</div>
+            <div class="product-evaluation">
+              <div *ngFor="let rating6 of ratings6">
+                <ng-container *ngFor="let star of stars6; index as i">
+                  <i
+                    class="fa fa-star"
+                    [class.filled]="i < rating6.value"
+                    (click)="changeRating6(rating6, i + 1)"
+                  ></i>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- videography -->
+  <div class="container">
+    <div><h3 class="qq fw-bolder m-3">videography</h3></div>
+    <div class="row gx-5">
+      <div class="col-md-3" *ngFor="let item of firstFourVideographer">
+        <div [routerLink]="['/mohamed/videographyList', item.id]">
+          <div class="product-box">
+            <img [src]="item.cover" alt="Product Image" />
+            <div class="product-name">{{ item.name }}</div>
+            <div class="product-hall">Videography</div>
+            <div class="product-price">{{ item.price }}$</div>
+            <div class="product-evaluation">
+              <div *ngFor="let rating9 of ratings9">
+                <ng-container *ngFor="let star of stars9; index as i">
+                  <i
+                    class="fa fa-star"
+                    [class.filled]="i < rating9.value"
+                    (click)="changeRating9(rating9, i + 1)"
+                  ></i>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-
-<!-- Wedding -->
-
-  <div class="container ">
-   
-    <div><h3 class="qq fw-bolder m-3">Wedding</h3></div>
-    
-    <div class="xxb d-flex justify-content-end ">
-        
-      <!-- <div class="view">
-        <a href="" (click)="ggoooox()" routerLink="View all">View all</a>
-      </div> -->
-    </div>
-
-    <div href="" (click)="ggmnx()" routerLink="" class="row gx-5">
-      <div class="col-md-3">
-        <div  class="product-box ">
-          <img src="../../assets/imags/1 51.png" alt="Product Image">
-          <div class="product-name">Lo2lo2a</div>
-          <div class="product-hall">Hall</div>
-          <div class="product-price">400$</div>
-          <div class="product-evaluation">
-            
-  <div *ngFor="let rating of ratings">
-    <ng-container *ngFor="let star of stars; index as i">
-      <i class="fa fa-star" [class.filled]="i< rating.value" (click)="changeRating(rating, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/031dc8a3-4645-4cfb-94db-feb18629249c.jpg" alt="Product Image">
-          <div class="product-name">Empress Hall</div>
-          <div class="product-hall">Hall</div>
-          <div class="product-price">300$</div>
-          <div class="product-evaluation">
-              
-  <div *ngFor="let rating of ratings1">
-    <ng-container *ngFor="let star of stars1; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating.value" (click)="changeRating1(rating, i + 1)"></i>
-    </ng-container>
-  </div>
-
-  
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/5066166-1185755096.jpg" alt="Product Image">
-          <div class="product-name">Masa</div>
-          <div class="product-hall">Hall</div>
-          <div class="product-price">500$</div>
-          <div class="product-evaluation">
-              
-  <div *ngFor="let rating of ratings2">
-    <ng-container *ngFor="let star of stars2; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating.value" (click)="changeRating2(rating, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/5066166-1185755096.jpg" alt="Product Image">
-          <div class="product-name">Masa</div>
-          <div class="product-hall">Hall</div>
-          <div class="product-price">500$</div>
-          <div class="product-evaluation">
-              
-  <div *ngFor="let rating of ratings2">
-    <ng-container *ngFor="let star of stars2; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating.value" (click)="changeRating2(rating, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-     
-    </div>
-
-  </div>
-
-
-<!--session  -->
-
-  <div class="container ">
-    <div><h3 class="qq fw-bolder m-3">session</h3></div>
-    <div class="as  d-flex justify-content-end ">
-      <!-- <div class="view">
-        <a href="" (click)="ggooox()" routerLink="View all">View all</a>
-      </div> -->
-    </div>
-
-    <div class="row gx-5">
-      <div class="col-md-3">
-        <div class="product-box ">
-          <img src="../../assets/imags/s1 2.png" alt="Product Image">
-          <div class="product-name">Grand</div>
-          <div class="product-hall">Session</div>
-          <div class="product-price">200$</div>
-          <div class="product-evaluation">
-           
-  
-  <div *ngFor="let rating3 of ratings3">
-    <ng-container *ngFor="let star of stars3; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating3.value" (click)="changeRating3(rating3, i + 1)"></i>
-    </ng-container>
-  </div>
-
-         
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/s3 2.png" alt="Product Image">
-          <div class="product-name">Volly</div>
-          <div class="product-hall">Session</div>
-          <div class="product-price">700$</div>
-          <div class="product-evaluation">
-          
-  <div *ngFor="let rating4 of ratings4">
-    <ng-container *ngFor="let star of stars3; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating4.value" (click)="changeRating4(rating4, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/s4 2.png" alt="Product Image">
-          <div class="product-name">solly</div>
-          <div class="product-hall">Hall</div>
-          <div class="product-price">300$</div>
-          <div class="product-evaluation">
-           
-              
-  
-  <div *ngFor="let rating5 of ratings5">
-    <ng-container *ngFor="let star of stars5; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating5.value" (click)="changeRating5(rating5, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/s4 2.png" alt="Product Image">
-          <div class="product-name">solly</div>
-          <div class="product-hall">Hall</div>
-          <div class="product-price">300$</div>
-          <div class="product-evaluation">
-           
-              
-  
-  <div *ngFor="let rating5 of ratings5">
-    <ng-container *ngFor="let star of stars5; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating5.value" (click)="changeRating5(rating5, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-      
-    </div>
-
-  </div>
-
-
-<!--  photographer   -->
-
-  <div class="container ">
-    <div><h3 class="qq fw-bolder m-3">photographer</h3></div>
-
-    <div class="am d-flex justify-content-end ">
-      <!-- <div class="view">
-        <a href="" (click)="ggoox()" routerLink="View all">View all</a>
-      </div> -->
-    </div>
-
-    <div class="row gx-5">
-      <div class="col-md-3">
-        <div class="product-box ">
-          <img src="../../assets/imags/download.jpg" alt="Product Image">
-          <div class="product-name">Mohamed Elrefaey</div>
-          <div class="product-hall">Photographer</div>
-          <div class="product-price">200$</div>
-          <div class="product-evaluation">
-            <div *ngFor="let rating6 of ratings6">
-              <ng-container *ngFor="let star of stars6; index as i">
-                <i class="fa fa-star" [class.filled]="i < rating6.value" (click)="changeRating6(rating6, i + 1)"></i>
+<!-- <div class="card shadow">
+          <img
+            src="../../assets/imags/1 51.png"
+            class="card-img-top p-3"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Lo2lo2a</h5>
+            <h5 class="text-black-50">Hall</h5>
+            <div *ngFor="let rating of ratings1">
+              <ng-container *ngFor="let star of stars1; index as i">
+                <i
+                  class="fa fa-star"
+                  [class.filled]="i < rating.value"
+                  (click)="changeRating1(rating, i + 1)"
+                ></i>
               </ng-container>
             </div>
-          
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/pexels-terje-sollie-320617-1-scaled.jpg" alt="Product Image">
-          <div class="product-name">Mohamed Hamdy</div>
-          <div class="product-hall">Photographer</div>
-          <div class="product-price">700$</div>
-          <div class="product-evaluation">
-            <div *ngFor="let rating7 of ratings7">
-              <ng-container *ngFor="let star of stars7; index as i">
-                <i class="fa fa-star" [class.filled]="i < rating7.value" (click)="changeRating7(rating7, i + 1)"></i>
-              </ng-container>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-primary">Go Details</a>
+              <h4>
+                <span class="badge text-bg-success">400$</span>
+              </h4>
             </div>
-          
           </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/images.jpg" alt="Product Image">
-          <div class="product-name">Mohamed samir</div>
-          <div class="product-hall">Photographer</div>
-          <div class="product-price">300$</div>
-          <div class="product-evaluation">
-           
-  
-  <div *ngFor="let rating8 of ratings8">
-    <ng-container *ngFor="let star of stars8; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating8.value" (click)="changeRating8(rating8, i + 1)"></i>
-    </ng-container>
-  </div>
-
-           
-          
-          
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/images.jpg" alt="Product Image">
-          <div class="product-name">Mohamed samir</div>
-          <div class="product-hall">Photographer</div>
-          <div class="product-price">300$</div>
-          <div class="product-evaluation">
-           
-  
-  <div *ngFor="let rating8 of ratings8">
-    <ng-container *ngFor="let star of stars8; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating8.value" (click)="changeRating8(rating8, i + 1)"></i>
-    </ng-container>
-  </div>
-
-           
-          
-          
-          </div>
-        </div>
-      </div>
-
-      
-    </div>
-
-  </div>
-
-
-<!-- videography -->
-
-  <div class="container ">
-    <div><h3 class="qq fw-bolder m-3">videography</h3></div>
-
-
-    
-    <div class="bn d-flex justify-content-end ">
-      <!-- <div class="view">
-        <a href="" (click)="ggox()" routerLink="View all">View all</a>
-      </div> -->
-    </div>
-
-
-    <div class="row gx-5">
-      <div class="col-md-3">
-        <div class="product-box ">
-          <img src="../../assets/imags/image-asset.jpeg" alt="Product Image">
-          <div class="product-name">Nahed Shawky</div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">400$</div>
-          <div class="product-evaluation">
-           
-  
-  <div *ngFor="let rating9 of ratings9">
-    <ng-container *ngFor="let star of stars9; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating9.value" (click)="changeRating9(rating9, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/NIK_1049_1080p-1200x900.webp" alt="Product Image">
-          <div class="product-name">Mohamed Hamdy</div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">600$</div>
-          <div class="product-evaluation">
-            
-  <div *ngFor="let rating10 of ratings10">
-    <ng-container *ngFor="let star of stars10; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating10.value" (click)="changeRating10(rating10, i + 1)"></i>
-    </ng-container>
-  </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/تعلم_أهم_قواعد_التصوير_الليلي.jpeg" alt="Product Image" alt="Product Image">
-          <div class="product-name">Mohamed Elrefaeyr</div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">100$</div>
-          <div class="product-evaluation">
-             
-  <div *ngFor="let rating11 of ratings11">
-    <ng-container *ngFor="let star of stars11; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating11.value" (click)="changeRating11(rating11, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-   
-      <div class="col-md-3">
-        <div class="product-box">
-          <img src="../../assets/imags/تعلم_أهم_قواعد_التصوير_الليلي.jpeg" alt="Product Image" alt="Product Image">
-          <div class="product-name">Mohamed Elrefaeyr</div>
-          <div class="product-hall">Videography</div>
-          <div class="product-price">100$</div>
-          <div class="product-evaluation">
-             
-  <div *ngFor="let rating11 of ratings11">
-    <ng-container *ngFor="let star of stars11; index as i">
-      <i class="fa fa-star" [class.filled]="i < rating11.value" (click)="changeRating11(rating11, i + 1)"></i>
-    </ng-container>
-  </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  
-
-
-
-
-  
-
-
-
-
-
-
-
- 
-
-
-   <!-- <ul class="list-inline rating-list" *ngFor="let star of stars; let i= index">
-    <li  class="fa fa-star checked" (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}" (mouseover)="addClass(star)"
-         (mouseout)="removeClass()"> <span class="material-icons"> </span>
-    </li>
-</ul> 
- -->
-
-
-
-  
-
-
-
-
-
-
-
+        </div> -->

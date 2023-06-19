@@ -91,4 +91,195 @@
     </div>
     <button type="submit" class="btn-primary btn mt-3 w-100">Send</button>
   </form>
+</div> -->
+
+<!-- photographer-form.component.html -->
+
+<div class="container card mt-5 p-4">
+  <h4 class="alert alert-primary text-center">
+    Fill in the photographer details
+  </h4>
+  <form (ngSubmit)="onSubmit()" #photographerForm="ngForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="name" class="form-label">Name:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="name"
+            name="name"
+            required
+            [(ngModel)]="photographer.name"
+            #name="ngModel"
+          />
+          <!-- <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+            <div *ngIf="name.errors.required">Name is required</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="price" class="form-label">Price:</label>
+          <input
+            class="form-control"
+            type="number"
+            id="price"
+            name="price"
+            required
+            [(ngModel)]="photographer.price"
+            #price="ngModel"
+          />
+          <!-- <div *ngIf="price.invalid && (price.dirty || price.touched)" class="text-danger">
+            <div *ngIf="price.errors.required">Price is required</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="cover_image" class="form-label"
+            >Upload cover image:</label
+          >
+          <input
+            class="form-control"
+            type="file"
+            id="cover_image"
+            name="cover_image"
+            accept="image/*"
+            required
+            (change)="onCoverImageSelected($event)"
+          />
+          <!-- <div *ngIf="coverImageInvalid" class="text-danger">
+            Cover image is required
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="shooting" class="form-label">Number of shootings:</label>
+          <input
+            class="form-control"
+            type="number"
+            id="shooting"
+            name="shooting"
+            required
+            [(ngModel)]="photographer.shooting"
+            #shooting="ngModel"
+          />
+          <!-- <div *ngIf="shooting.invalid && (shooting.dirty || shooting.touched)" class="text-danger">
+            <div *ngIf="shooting.errors.required">Number of shootings is required</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="open_day" class="form-label">Open day:</label>
+          <input
+            class="form-control"
+            id="open_day"
+            name="open_day"
+            type="text"
+            required
+            [(ngModel)]="photographer.openDay"
+            #openDay="ngModel"
+          />
+          <!-- <div *ngIf="openDay.invalid && (openDay.dirty || openDay.touched)" class="text-danger">
+            <div *ngIf="openDay.errors.required">Open day is required</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="close_day" class="form-label">Close day:</label>
+          <input
+            class="form-control"
+            id="close_day"
+            name="close_day"
+            type="text"
+            required
+            [(ngModel)]="photographer.closeDay"
+            #closeDay="ngModel"
+          />
+          <!-- <div *ngIf="closeDay.invalid && (closeDay.dirty || closeDay.touched)" class="text-danger">
+            <div *ngIf="closeDay.errors.required">Close day is required</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="images[0]" class="form-label">Images 0:</label>
+          <input
+            class="form-control"
+            type="file"
+            id="images[0]"
+            name="images[0]"
+            accept="image/*"
+            required
+            (change)="onImageSelected($event, 0)"
+          />
+          <!-- <div *ngIf="imageInvalid[0]" class="text-danger">
+            Imageis required
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-1">
+          <label for="images[1]" class="form-label">Images 1:</label>
+          <input
+            class="form-control"
+            type="file"
+            id="images[1]"
+            name="images[1]"
+            accept="image/*"
+            required
+            (change)="onImageSelected($event, 1)"
+          />
+          <!-- <div *ngIf="imageInvalid[1]" class="text-danger">
+            Image is required
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="mb-1">
+          <label for="location" class="form-label">Location:</label>
+          <input
+            class="form-control"
+            type="text"
+            id="location"
+            name="location"
+            required
+            [(ngModel)]="photographer.location"
+            #location="ngModel"
+          />
+          <!-- <div *ngIf="location.invalid && (location.dirty || location.touched)" class="text-danger">
+            <div *ngIf="location.errors.required">Location is required</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="mb-1">
+          <label for="description" class="form-label">Description:</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            rows="3"
+            required
+            [(ngModel)]="photographer.description"
+            #description="ngModel"
+          ></textarea>
+          <!-- <div *ngIf="description.invalid && (description.dirty || description.touched)" class="text-danger">
+            <div *ngIf="description.errors.required">Description is required</div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="btn-primary btn mt-3 w-100"
+      [disabled]="photographerForm.invalid"
+    >
+      send
+    </button>
+  </form>
 </div>
