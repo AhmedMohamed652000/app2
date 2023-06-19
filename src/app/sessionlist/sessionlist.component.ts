@@ -8,7 +8,7 @@ import { WiddingService } from './../widding.service';
   styleUrls: ['./sessionlist.component.css'],
 })
 export class SessionlistComponent {
-  session1: any;
+  session1: any = {};
   movieId: string = '';
   imgprefix: string = 'http://image.tmdb.org/t/p/w500';
   constructor(
@@ -18,7 +18,10 @@ export class SessionlistComponent {
   ngOnInit(): void {
     this.movieId = this._ActivatedRoute.snapshot.params['id'];
     this._WiddingService.getMovieDetails2(this.movieId).subscribe({
-      next: (respsonse) => (this.session1 = respsonse.data),
+      next: (respsonse) => {
+        this.session1 = respsonse.data;
+        console.log(this.session1);
+      },
     });
   }
 }
