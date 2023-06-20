@@ -10,15 +10,9 @@
           <div class="product-hall">Photographer</div>
           <div class="product-price">{{ item.price }}$</div>
           <div class="product-evaluation">
-            <div *ngFor="let rating6 of ratings6">
-              <ng-container *ngFor="let star of stars6; index as i">
-                <i
-                  class="fa fa-star"
-                  [class.filled]="i < rating6.value"
-                  (click)="changeRating6(rating6, i + 1)"
-                ></i>
-              </ng-container>
-            </div>
+            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+              <i class="fa fa-star" [ngClass]="{ filled: i < item.rate }"></i>
+            </ng-container>
           </div>
         </div>
       </div>

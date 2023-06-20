@@ -13,7 +13,12 @@ export class Session2Component {
   imgprefix: string = 'http://image.tmdb.org/t/p/w500';
   ngOnInit(): void {
     this._WiddingService.getAllSessions().subscribe({
-      next: (response) => (this.trendingMovies1 = response.data),
+      next: (response) => {
+        this.trendingMovies1 = response.data;
+        this.trendingMovies1.forEach((item) => {
+          item.rate = Math.floor(Math.random() * 5) + 1;
+        });
+      },
     });
   }
 }

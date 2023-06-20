@@ -11,9 +11,12 @@
       >
         <img src="{{ session.cover }}" class="w-100" alt="" />
         <div class="product-name">{{ session.name }}</div>
-        <!-- <div class="product-hall">{{session.style}}</div> -->
         <div class="product-price">{{ session.price }}</div>
-        <div></div>
+        <div>
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+            <i class="fa fa-star" [ngClass]="{ filled: i < session.rate }"></i>
+          </ng-container>
+        </div>
       </div>
     </div>
   </div>

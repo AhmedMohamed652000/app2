@@ -27,18 +27,14 @@ import { WiddinglistComponent } from './widdinglist/widdinglist.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { PhotographerFormComponent } from './photographer-form/photographer-form.component';
 import { VideographyFormComponent } from './videography-form/videography-form.component';
+import { PhotographerListComponent } from './photographer-list/photographer-list.component';
 
-
+import { VideographyListComponent } from './videography-list/videography-list.component';
 import { SessionOpertionComponent } from './session-opertion/session-opertion.component';
 import { PhotographyOperationComponent } from './photography-operation/photography-operation.component';
 import { WeddingOperationComponent } from './wedding-operation/wedding-operation.component';
 import { VideographyOperationComponent } from './videography-operation/videography-operation.component';
-import { EditVideographyComponent } from './edit-videography/edit-videography.component';
-import { EditHellComponent } from './edit-hell/edit-hell.component';
-import { VideographyListComponent } from './videography-list/videography-list.component';
-import { PhotographerListComponent } from './photographer-list/photographer-list.component';
-import { EditSessionComponent } from './edit-session/edit-session.component';
-import { EditPhotographerComponent } from './edit-photographer/edit-photographer.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -72,10 +68,6 @@ const routes: Routes = [
       { path: 'Business1', component: Business1Component },
       { path: 'hell', component: HellComponent },
       { path: 'SessionDetails', component: SessionDetailsComponent },
-      { path: 'videography/edit/:id', component: EditVideographyComponent },
-      { path: 'hell/edit/:id', component: EditHellComponent },
-      { path: 'session/edit/:id', component: EditSessionComponent },
-      { path: 'photographer/edit/:id', component: EditPhotographerComponent },
       { path: 'Sessionlist/:id', component: SessionlistComponent },
       { path: 'Profilepage', component: ProfilepageComponent },
       { path: 'sessionOperation', component: SessionOpertionComponent },
@@ -96,4 +88,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

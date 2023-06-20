@@ -14,7 +14,9 @@
         <div class="product-hall">{{ movie.style }}</div>
         <div class="product-price">{{ movie.price }}$</div>
         <div>
-          <a> </a>
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+            <i class="fa fa-star" [ngClass]="{ filled: i < movie.rate }"></i>
+          </ng-container>
         </div>
       </div>
     </div>

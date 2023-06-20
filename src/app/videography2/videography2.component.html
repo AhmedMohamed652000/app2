@@ -8,6 +8,11 @@
           <div class="product-name">{{ item.name }}</div>
           <div class="product-hall">Videography</div>
           <div class="product-price">{{ item.price }}$</div>
+          <div>
+            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+              <i class="fa fa-star" [ngClass]="{ filled: i < item.rate }"></i>
+            </ng-container>
+          </div>
         </div>
       </div>
     </div>

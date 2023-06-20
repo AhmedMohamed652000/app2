@@ -33,6 +33,9 @@ export class Photographer2Component {
     this._WiddingService.getAllPhotographer().subscribe({
       next: (response) => {
         this.allPhotographer = response.data;
+        this.allPhotographer.forEach((item: any) => {
+          item.rate = Math.floor(Math.random() * 5) + 1;
+        });
       },
     });
   }
