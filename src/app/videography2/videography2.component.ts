@@ -33,6 +33,9 @@ export class Videography2Component {
     this._WiddingService.getAllVideographer().subscribe({
       next: (response) => {
         this.allVideographer = response.data;
+        this.allVideographer.forEach((item: any) => {
+          item.rate = Math.floor(Math.random() * 5) + 1;
+        });
       },
     });
   }

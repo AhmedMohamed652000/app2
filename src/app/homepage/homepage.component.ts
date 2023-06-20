@@ -75,7 +75,6 @@ export class HomepageComponent {
   changeRating11(rating: { value: any }, value: any) {
     rating.value = value;
   }
-
   allWedding: any = [];
   firstFourWedding: any[] = [];
   allSession: any = [];
@@ -84,6 +83,9 @@ export class HomepageComponent {
   firstFourPhotographer: any[] = [];
   allVideographer: any = [];
   firstFourVideographer: any[] = [];
+
+  // Generate an array of random numbers between 1 and 5
+
   ngOnInit(): void {
     this._AuthService.UserData.subscribe({
       next: () => {
@@ -99,24 +101,36 @@ export class HomepageComponent {
       next: (response) => {
         this.allWedding = response.data;
         this.firstFourWedding = this.allWedding.slice(0, 4);
+        this.firstFourWedding.forEach((item) => {
+          item.rate = Math.floor(Math.random() * 5) + 1;
+        });
       },
     });
     this._WiddingService.getAllSessions().subscribe({
       next: (response) => {
         this.allSession = response.data;
         this.firstFourSession = this.allSession.slice(0, 4);
+        this.firstFourSession.forEach((item) => {
+          item.rate = Math.floor(Math.random() * 5) + 1;
+        });
       },
     });
     this._WiddingService.getAllPhotographer().subscribe({
       next: (response) => {
         this.allPhotographer = response.data;
         this.firstFourPhotographer = this.allPhotographer.slice(0, 4);
+        this.firstFourPhotographer.forEach((item) => {
+          item.rate = Math.floor(Math.random() * 5) + 1;
+        });
       },
     });
     this._WiddingService.getAllVideographer().subscribe({
       next: (response) => {
         this.allVideographer = response.data;
         this.firstFourVideographer = this.allVideographer.slice(0, 4);
+        this.firstFourVideographer.forEach((item) => {
+          item.rate = Math.floor(Math.random() * 5) + 1;
+        });
       },
     });
   }

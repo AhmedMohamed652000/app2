@@ -15,7 +15,12 @@ export class Widding2Component {
   imgprefix: string = 'http://image.tmdb.org/t/p/w500';
   ngOnInit(): void {
     this._WiddingService.getAllWedding().subscribe({
-      next: (response) => (this.trendingMovies = response.data),
+      next: (response) => {
+        this.trendingMovies = response.data;
+        this.trendingMovies.forEach((item) => {
+          item.rate = Math.floor(Math.random() * 5) + 1;
+        });
+      },
     });
   }
 }
